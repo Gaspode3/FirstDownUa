@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перша вниз | First Down</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="translations.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0f0f0f',
+                        brandGray: '#151515',
+                        brandOrange: '#d9531e',
+                        textGray: '#8a8a8a'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .lang-active { color: #d9531e; }
+        .lang-inactive { color: #525252; transition: color 0.3s; }
+        .lang-inactive:hover { color: #a3a3a3; }
+        body { background-color: #0f0f0f; }
+    </style>
+</head>
+<body class="text-white font-sans antialiased">
+
+    <!-- Навігація -->
+    <nav class="border-b border-brandOrange/30 bg-brandDark">
+        <div class="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-12">
+                <a href="#" class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo.png" alt="Перша вниз Лого" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="hidden text-brandOrange font-bold tracking-widest text-lg" data-i18n="nav_brand">FIRST DOWN</span>
+                </a>
+
+                <div class="hidden md:flex gap-8 text-sm font-semibold tracking-wider uppercase text-gray-300">
+                    <a href="#about" class="hover:text-brandOrange transition-colors" data-i18n="nav_about">ПРО ПРОЄКТ</a>
+                    <a href="#gallery" class="hover:text-brandOrange transition-colors" data-i18n="nav_path">НАШ ШЛЯХ</a>
+                    <a href="#team" class="hover:text-brandOrange transition-colors" data-i18n="nav_team">КОМАНДА</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-8">
+                <div class="text-sm font-bold tracking-widest">
+                    <button id="btn-ua" class="lang-active" onclick="switchLang('ua')">UA</button>
+                    <span class="text-neutral-600 mx-1">/</span>
+                    <button id="btn-en" class="lang-inactive" onclick="switchLang('en')">EN</button>
+                </div>
+                <a href="#apply" class="hidden sm:block bg-brandOrange hover:bg-[#bd4517] transition-colors text-white font-bold text-sm tracking-wider py-8 px-8 uppercase" data-i18n="nav_btn">
+                    ПОДАТИ ЗАЯВКУ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Головна секція -->
+    <section id="about" class="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 min-h-[80vh] border-b border-neutral-800">
+        <div class="lg:col-span-7 p-8 lg:p-16 xl:p-24">
+            <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tight mb-12 uppercase">
+                <span class="block text-white" data-i18n="mission_part1">МІСІЯ</span>
+                <span class="block text-brandOrange" data-i18n="mission_part2">ПРОЄКТУ</span>
+            </h1>
+            <div class="space-y-6 text-gray-300 text-lg sm:text-xl leading-relaxed max-w-2xl font-medium">
+                <p data-i18n="mission_p1">Наш проєкт створений спеціально для людей з ампутаціями, які <strong>ніколи раніше не їздили на мотоциклі</strong>, але відчувають, що це їхня мрія.</p>
+                <p data-i18n="mission_p2">Сьогодні в Україні відсутня законодавча база для отримання прав категорії 'А' людьми, що втратили кінцівки.</p>
+            </div>
+            <div class="mt-12 border-l-4 border-brandOrange pl-6 py-2 max-w-2xl">
+                <p class="text-brandOrange font-medium text-lg sm:text-xl uppercase tracking-wide leading-relaxed" data-i18n="mission_quote">
+                    МИ ЗМІНЮЄМО ПРАВИЛА ГРИ. НАДАЄМО БЕЗПЕЧНИЙ ПРОСТІР НА ЗАКРИТОМУ ТРЕКУ, УНІВЕРСАЛЬНО АДАПТОВАНІ МОТОЦИКЛИ ТА ПІДТРИМКУ КОМ'ЮНІТІ.
+                </p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-[#151515] p-8 lg:p-16 xl:p-24 border-l border-neutral-800">
+            <h2 class="text-2xl lg:text-3xl font-medium tracking-widest mb-12 border-b border-neutral-800 pb-6 uppercase text-white" data-i18n="path_title">НАШ ШЛЯХ</h2>
+            <div class="space-y-12">
+                <div class="flex gap-6">
+                    <span class="text-brandOrange font-bold text-3xl mt-[-4px]">01</span>
+                    <div>
+                        <h3 class="text-white font-bold tracking-wider text-lg mb-2 uppercase" data-i18n="path_01_title">ПЕРШИЙ ДОСВІД</h3>
+                        <p class="text-textGray leading-relaxed text-sm" data-i18n="path_01_desc">Фізична та психологічна реабілітація...</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <span class="text-brandOrange font-bold text-3xl mt-[-4px]">02</span>
+                    <div>
+                        <h3 class="text-white font-bold tracking-wider text-lg mb-2 uppercase" data-i18n="path_02_title">СПОРТИВНА АРЕНА</h3>
+                        <p class="text-textGray leading-relaxed text-sm" data-i18n="path_02_desc">Наш перший учасник успішно змагається...</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <span class="text-brandOrange font-bold text-3xl mt-[-4px]">03</span>
+                    <div>
+                        <h3 class="text-white font-bold tracking-wider text-lg mb-2 uppercase" data-i18n="path_03_title">ЗМІНА СИСТЕМИ</h3>
+                        <p class="text-textGray leading-relaxed text-sm" data-i18n="path_03_desc">Спираючись на наші результати...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секція галереї -->
+    <section id="gallery" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
+        <div class="mb-12">
+            <h2 class="text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tight uppercase mb-4">
+                <span class="text-white" data-i18n="gallery_part1">НАШІ</span> <span class="text-brandOrange" data-i18n="gallery_part2">МОМЕНТИ</span>
+            </h2>
+            <p class="text-textGray font-medium tracking-widest uppercase text-lg" data-i18n="gallery_subtitle">РЕАЛЬНІ ІСТОРІЇ. РЕАЛЬНІ ЛЮДИ.</p>
+        </div>
+        
+        <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Динамічний контент -->
+        </div>
+    </section>
+
+    <!-- Секція КОМАНДА -->
+    <section id="team" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
+        <div class="flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-800 pb-6 mb-12">
+            <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight" data-i18n="team_title">КОМАНДА</h2>
+            <span class="text-brandOrange font-bold tracking-widest text-lg md:text-xl mt-4 md:mt-0 uppercase" data-i18n="team_badge">САМОФІНАНСОВАНИЙ ПРОЄКТ</span>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-[#151515] p-8 border border-neutral-800/50">
+                <div class="text-brandOrange mb-6">
+                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6h-3V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-9-2h4v2h-4V4zm6 11h-3v3h-2v-3H8v-2h3v-3h2v3h3v2z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_1_title">ОРГАНІЗАТОР</h3>
+                <p class="text-textGray leading-relaxed" data-i18n="team_1_desc">First responder...</p>
+            </div>
+            
+            <div class="bg-[#151515] p-8 border border-neutral-800/50">
+                <div class="text-brandOrange mb-6">
+                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h3l2-2h6l2 2h3c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm8 3c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_2_title">МЕДІА</h3>
+                <p class="text-textGray leading-relaxed" data-i18n="team_2_desc">Дружина організатора...</p>
+            </div>
+            
+            <div class="bg-[#151515] p-8 border border-neutral-800/50">
+                <div class="text-brandOrange mb-6">
+                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M19.44 9.03L15.41 5H11v2h3.59l2.2 2.2-7.22 3.32c-.85-.68-1.92-1.1-3.07-1.1-2.76 0-5 2.24-5 5s2.24 5 5 5 2.45-.88 3.51-2.31l7.85-3.62c.38.6.98 1.05 1.68 1.25V19h2v-2.88c1.39-.52 2.38-1.85 2.38-3.41 0-1.57-1.01-2.91-2.43-3.41l-2.05-4.27zM6.5 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm13-4c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_3_title">ІНСТРУКТОР</h3>
+                <p class="text-textGray leading-relaxed" data-i18n="team_3_desc">Близький друг родини...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер / Контакти -->
+    <section id="apply" class="relative max-w-[1600px] mx-auto overflow-hidden border-t-4 border-brandOrange">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 opacity-5 pointer-events-none w-full text-center">
+            <span class="text-[10rem] lg:text-[15rem] font-black text-white whitespace-nowrap tracking-tighter">FIRST DOWN</span>
+        </div>
+        
+        <div class="relative z-10 p-8 lg:p-16 xl:p-24 pb-12">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-20">
+                <div>
+                    <h2 class="text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tight uppercase mb-6">
+                        <span class="text-white" data-i18n="footer_brand1">ПЕРША</span> <span class="text-brandOrange" data-i18n="footer_brand2">ВНИЗ</span>
+                    </h2>
+                    <a href="https://instagram.com/" target="_blank" class="flex items-center gap-3 text-white hover:text-brandOrange transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        <span class="font-bold tracking-widest text-lg" data-i18n="footer_insta">ПІДПИСАТИСЯ</span>
+                    </a>
+                </div>
+                <div class="text-left lg:text-right w-full lg:w-auto">
+                    <p class="text-gray-400 font-bold tracking-widest text-sm mb-4 uppercase" data-i18n="footer_ready">ГОТОВИЙ ПОВЕРНУТИСЯ В СІДЛО?</p>
+                    <a href="https://forms.google.com/" target="_blank" class="inline-block bg-brandOrange hover:bg-[#bd4517] text-white font-bold py-6 px-12 uppercase tracking-wider text-xl w-full lg:w-auto text-center transition-colors" data-i18n="footer_btn">
+                        ЗАПОВНИТИ АНКЕТУ
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between pt-8 border-t border-neutral-800 text-sm font-medium tracking-widest text-neutral-500 uppercase gap-4">
+                <span data-i18n="footer_copy">© 2026 ПРОЄКТ 'ПЕРША ВНИЗ'.</span>
+                <span data-i18n="footer_partners">ДЛЯ ПАРТНЕРІВ: EMAIL@FIRSTDOWN.ORG.UA</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentLang = localStorage.getItem('firstDownLang') || 'ua';
+        
+        function switchLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('firstDownLang', lang);
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            const btnUa = document.getElementById('btn-ua');
+            const btnEn = document.getElementById('btn-en');
+            
+            if(lang === 'ua') {
+                btnUa.className = 'lang-active';
+                btnEn.className = 'lang-inactive';
+            } else {
+                btnUa.className = 'lang-inactive';
+                btnEn.className = 'lang-active';
+            }
+        }
+
+        // Перевіряємо, чи завантажився словник, перш ніж запускати переклад
+        if (typeof translations !== 'undefined') {
+            switchLang(currentLang);
+        } else {
+            console.error("Словник translations.js не знайдено або в ньому помилка!");
+        }
+
+        const galleryContainer = document.getElementById('gallery-container');
+        let imageIndex = 1;
+        const maxPlaceholders = 3;
+
+        function addPhotoToGallery(source) {
+            const div = document.createElement('div');
+            div.className = 'aspect-w-1 aspect-h-1 overflow-hidden bg-[#151515] border border-neutral-800 group';
+            
+            const imageElement = document.createElement('img');
+            imageElement.src = source;
+            imageElement.className = 'object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500';
+            
+            div.appendChild(imageElement);
+            galleryContainer.appendChild(div);
+        }
+
+        function loadNextImage() {
+            const img = new Image();
+            const imgPath = `gallery/${imageIndex}.jpg`;
+
+            img.onload = function() {
+                addPhotoToGallery(img.src);
+                imageIndex++;
+                loadNextImage();
+            };
+
+            img.onerror = function() {
+                // Якщо реальних фото немає (або папки не існує), показуємо заглушки
+                if (imageIndex === 1) {
+                    for (let i = 1; i <= maxPlaceholders; i++) {
+                        addPhotoToGallery(`https://placehold.co/600x600/151515/525252?text=FOTO+${i}`);
+                    }
+                }
+            }; 
+            
+            img.src = imgPath;
+        }
+
+        loadNextImage();
+    </script>
+</body>
+</html>
