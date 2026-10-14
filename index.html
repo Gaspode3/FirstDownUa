@@ -3,29 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Перша вниз | Соціальний мотопроєкт ГО "Мотодопомога Львів"</title>
-    <meta name="description" content="Соціальний мотопроєкт для ветеранів з ампутаціями під егідою ГО Мотодопомога Львів. Безпечний простір на треку, адаптовані мотоцикли та підтримка спільноти.">
+    <title>Перша вниз | Абілітаційний мотопроєкт ГО "Мотодопомога Львів"</title>
+    <meta name="description" content="Абілітаційний мотопроєкт для ветеранів з ампутаціями ГО Мотодопомога Львів. Безпечний простір на треку, адаптовані мотоцикли та підтримка спільноти.">
     <meta name="keywords" content="Перша вниз, First Down, Мотодопомога Львів, Motodopomoga Lviv, Lemberg Moto, Zgraya, адаптовані мотоцикли, ветерани, реабілітація, ампутація">
     <meta name="author" content="Проєкт 'Перша вниз' & ГО 'Мотодопомога Львів'">
 
-    <!-- Open Graph / Facebook / Telegram / Viber -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://firstdown.org.ua/">
-    <meta property="og:title" content="Перша вниз | Мотопроєкт ГО Мотодопомога Львів">
-    <meta property="og:description" content="Безпечний простір на треку, адаптовані мотоцикли та кваліфіковані інструктори для ветеранів з ампутаціями.">
-    <meta property="og:image" content="https://firstdown.org.ua/logo.png">
-    <meta property="og:site_name" content="Перша вниз">
-    <meta property="og:locale" content="uk_UA">
-    <meta property="og:locale:alternate" content="en_US">
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://firstdown.org.ua/">
-    <meta name="twitter:title" content="Перша вниз | Мотопроєкт ГО Мотодопомога Львів">
-    <meta name="twitter:description" content="Безпечний простір на треку, адаптовані мотоцикли та кваліфіковані інструктори для ветеранів з ампутаціями.">
-    <meta name="twitter:image" content="https://firstdown.org.ua/logo.png">
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -57,6 +39,41 @@
         .lang-inactive { color: #525252; transition: color 0.3s; }
         .lang-inactive:hover { color: #a3a3a3; }
         body { background-color: #0f0f0f; }
+
+        .blend-logo {
+            mix-blend-mode: screen;
+        }
+
+        .motodopomoga-logo {
+            mix-blend-mode: screen;
+            filter: grayscale(100%) contrast(130%) brightness(1.1);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .group:hover .motodopomoga-logo,
+        .group:active .motodopomoga-logo,
+        .motodopomoga-logo:hover,
+        .motodopomoga-logo:active {
+            filter: grayscale(0%) contrast(100%) brightness(1);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Стилі для плавного FAQ */
+        .faq-answer {
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+            color: #d9531e;
+        }
+        .faq-item.active .faq-btn-text {
+            color: #d9531e;
+        }
     </style>
 </head>
 <body class="text-white font-sans antialiased pt-20">
@@ -64,44 +81,111 @@
     <!-- Фіксована навігація -->
     <nav class="border-b border-brandOrange/30 bg-brandDark/95 fixed top-0 left-0 w-full z-50 backdrop-blur-md">
         <div class="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-6 lg:gap-12">
-                <a href="#" class="flex-shrink-0 flex items-center gap-3 md:gap-4" aria-label="Перша вниз - На головну">
-                    <img src="logo.png" alt="Логотип Перша вниз" class="h-10 w-auto object-contain" onerror="this.style.display='none';">
-                    <span class="text-neutral-600 font-light text-xl select-none">|</span>
-                    <img src="gallery/partners/motodopomoga.png" alt="ГО Мотодопомога Львів" class="h-9 w-auto object-contain" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'50\' viewBox=\'0 0 200 50\'><rect width=\'100%\' height=\'100%\' fill=\'%23151515\'/><text x=\'50%\' y=\'55%\' font-family=\'Montserrat, sans-serif\' font-weight=\'bold\' font-size=\'14\' fill=\'%23d9531e\' text-anchor=\'middle\' dominant-baseline=\'middle\'>MOTODOPOMOGA</text></svg>';">
+            <div class="flex items-center gap-4 lg:gap-8">
+                <!-- Лого "Перша вниз" -->
+                <a href="#" class="flex-shrink-0 flex items-center" aria-label="Перша вниз - На головну">
+                    <img src="logo.png" alt="Логотип Перша вниз" class="h-10 w-auto object-contain blend-logo" onerror="this.style.display='none';">
                 </a>
 
-                <div class="hidden md:flex gap-8 text-sm font-semibold tracking-wider uppercase text-gray-300">
+                <span class="text-neutral-600 font-light text-xl select-none">|</span>
+
+                <!-- Лого ГО "Мотодопомога" -->
+                <a href="https://facebook.com/motodopomoga" target="_blank" rel="noopener noreferrer" class="group flex items-center" title="ГО Мотодопомога Львів">
+                    <img src="gallery/partners/motodopomoga.png" alt="ГО Мотодопомога Львів" class="h-9 w-auto object-contain motodopomoga-logo" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'50\' viewBox=\'0 0 200 50\'><rect width=\'100%\' height=\'100%\' fill=\'%23151515\'/><text x=\'50%\' y=\'55%\' font-family=\'Montserrat, sans-serif\' font-weight=\'bold\' font-size=\'14\' fill=\'%23ffffff\' text-anchor=\'middle\' dominant-baseline=\'middle\'>MOTODOPOMOGA</text></svg>';">
+                </a>
+
+                <!-- Десктоп Меню -->
+                <div class="hidden lg:flex gap-8 text-sm font-semibold tracking-wider uppercase text-gray-300 ml-6">
                     <a href="#about" class="hover:text-brandOrange transition-colors" data-i18n="nav_about"></a>
                     <a href="#path" class="hover:text-brandOrange transition-colors" data-i18n="nav_path"></a>
-                    <a href="#gallery" class="hover:text-brandOrange transition-colors" data-i18n="gallery_part2"></a>
+                    <a href="#gallery" class="hover:text-brandOrange transition-colors" data-i18n="nav_gallery"></a>
                     <a href="#team" class="hover:text-brandOrange transition-colors" data-i18n="nav_team"></a>
+                    <a href="#faq" class="hover:text-brandOrange transition-colors" data-i18n="nav_faq"></a>
                     <a href="#partners" class="hover:text-brandOrange transition-colors" data-i18n="nav_partners"></a>
                 </div>
             </div>
-            <div class="flex items-center gap-8">
+
+            <div class="flex items-center gap-6">
+                <!-- Мови -->
                 <div class="text-sm font-bold tracking-widest" aria-label="Вибір мови">
                     <button id="btn-ua" class="lang-active" onclick="switchLang('ua')" aria-label="Переключити на українську мову">UA</button>
                     <span class="text-neutral-600 mx-1" aria-hidden="true">/</span>
                     <button id="btn-en" class="lang-inactive" onclick="switchLang('en')" aria-label="Switch to English language">EN</button>
                 </div>
-                <a href="#apply" class="hidden sm:block bg-brandOrange hover:bg-[#bd4517] transition-colors text-white font-bold text-sm tracking-wider py-3 px-6 uppercase rounded-sm" data-i18n="nav_btn"></a>
+
+                <!-- Кнопка заявки -->
+                <a href="https://forms.gle/SpJBqmKMYH8tFTDP6" target="_blank" rel="noopener noreferrer" class="hidden sm:block bg-brandOrange hover:bg-[#bd4517] transition-colors text-white font-bold text-sm tracking-wider py-3 px-6 uppercase rounded-sm" data-i18n="nav_btn"></a>
+
+                <!-- Гамбургер кнопка для мобільних -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-white focus:outline-none p-2" aria-label="Відкрити меню">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
             </div>
+        </div>
+
+        <!-- Мобільне меню -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brandDark border-b border-neutral-800 px-6 py-4 flex-col gap-4 text-sm font-semibold tracking-wider uppercase text-gray-300">
+            <a href="#about" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1" data-i18n="nav_about"></a>
+            <a href="#path" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1" data-i18n="nav_path"></a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1" data-i18n="nav_gallery"></a>
+            <a href="#team" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1" data-i18n="nav_team"></a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1" data-i18n="nav_faq"></a>
+            <a href="#partners" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1" data-i18n="nav_partners"></a>
+            <a href="https://forms.gle/SpJBqmKMYH8tFTDP6" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="inline-block sm:hidden bg-brandOrange text-white text-center font-bold text-sm py-3 px-6 uppercase rounded-sm mt-2" data-i18n="nav_btn"></a>
         </div>
     </nav>
 
-    <!-- СЕКЦІЯ 1: МІСІЯ ПРОЄКТУ -->
+    <!-- HERO БЛОК З ФІКСОВАНИМ ШЛЯХОМ ДО БЕКГРАУНДУ -->
+    <!-- HERO БЛОК З ЧІТКИМ ФОКУСОМ НА МОТОЦИКЛ -->
+<section class="relative max-w-[1600px] mx-auto min-h-[80vh] flex items-center justify-center border-b border-neutral-800 p-8 lg:p-16 xl:p-24 overflow-hidden bg-[#0f0f0f]">
+    
+    <!-- Фонове зображення з прив'язкою до нижнього краю (bg-bottom), щоб показати мотоцикл -->
+    <div class="absolute inset-0 z-0 bg-cover bg-bottom bg-no-repeat grayscale opacity-50 transition-opacity duration-300" 
+         style="background-image: url('gallery/hero-bg.jpg');"></div>
+
+    <!-- Полегшена градієнтна підкладка: затемнює тільки верх/краї для читабельності тексту, залишаючи байк видимим -->
+    <div class="absolute inset-0 z-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/50 to-[#0f0f0f]/80"></div>
+
+    <div class="relative z-10 max-w-4xl text-center space-y-8 my-auto drop-shadow-lg">
+        <span class="inline-block text-brandOrange text-xs sm:text-sm font-bold tracking-widest uppercase bg-brandOrange/20 border border-brandOrange/40 px-4 py-2 rounded-full backdrop-blur-sm" data-i18n="hero_badge"></span>
+        
+        <h1 class="text-6xl sm:text-7xl lg:text-9xl font-black uppercase tracking-tight leading-none drop-shadow-2xl">
+            <span class="text-white" data-i18n="hero_title_1"></span> <span class="text-brandOrange" data-i18n="hero_title_2"></span>
+        </h1>
+
+        <p class="text-gray-200 text-lg sm:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed drop-shadow-md" data-i18n="hero_subtitle"></p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+            <a href="https://forms.gle/SpJBqmKMYH8tFTDP6" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-brandOrange hover:bg-[#bd4517] text-white font-bold py-5 px-10 uppercase tracking-wider text-lg transition-colors rounded-sm shadow-2xl" data-i18n="hero_btn_apply"></a>
+            <a href="#about" class="w-full sm:w-auto border border-neutral-600 hover:border-brandOrange text-white font-bold py-5 px-10 uppercase tracking-wider text-lg transition-colors rounded-sm backdrop-blur-sm bg-black/20" data-i18n="hero_btn_about"></a>
+        </div>
+    </div>
+</section>
+
+    <!-- СЕКЦІЯ 1: ПРО ПРОЄКТ ТА МІСІЯ -->
     <section id="about" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            
-            <div class="lg:col-span-6">
-                <!-- Заголовок у єдиному стандарті -->
-                <h1 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight border-b border-neutral-800 pb-6 mb-8 flex flex-wrap gap-x-3">
+        <div class="max-w-4xl space-y-16">
+            <!-- БЛОК 1: ПРО ПРОЄКТ -->
+            <div>
+                <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight border-b border-neutral-800 pb-6 mb-8 flex flex-wrap gap-x-3">
+                    <span class="text-white" data-i18n="about_title_part1"></span>
+                    <span class="text-brandOrange" data-i18n="about_title_part2"></span>
+                </h2>
+
+                <div class="space-y-6 text-gray-300 text-lg sm:text-xl leading-relaxed font-medium">
+                    <p data-i18n="about_p1"></p>
+                    <p data-i18n="about_p2"></p>
+                </div>
+            </div>
+
+            <!-- БЛОК 2: МІСІЯ ПРОЄКТУ -->
+            <div>
+                <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight border-b border-neutral-800 pb-6 mb-8 flex flex-wrap gap-x-3">
                     <span class="text-white" data-i18n="mission_part1"></span>
                     <span class="text-brandOrange" data-i18n="mission_part2"></span>
-                </h1>
+                </h2>
 
-                <div class="space-y-6 text-gray-300 text-lg sm:text-xl leading-relaxed font-medium mb-12">
+                <div class="space-y-6 text-gray-300 text-lg sm:text-xl leading-relaxed font-medium mb-8">
                     <p data-i18n="mission_p1"></p>
                     <p data-i18n="mission_p2"></p>
                 </div>
@@ -110,32 +194,18 @@
                     <p class="text-brandOrange font-medium text-lg sm:text-xl uppercase tracking-wide leading-relaxed" data-i18n="mission_quote"></p>
                 </div>
             </div>
-
-            <div class="lg:col-span-6 flex justify-center items-center">
-                <div class="relative w-full p-2">
-                    <img src="logo.png" 
-                         alt="Логотип Перша вниз" 
-                         class="w-full h-auto object-contain mix-blend-screen opacity-100 transition-transform duration-500 hover:scale-105" 
-                         style="mask-image: radial-gradient(ellipse 85% 85% at center, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%); -webkit-mask-image: radial-gradient(ellipse 85% 85% at center, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);"
-                         onerror="this.style.display='none';">
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- СЕКЦІЯ 2: НАШ ШЛЯХ -->
     <section id="path" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 bg-[#151515]">
         <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight border-b border-neutral-800 pb-6 mb-12" data-i18n="path_title"></h2>
-        
         <div class="relative max-w-5xl mx-auto pb-16">
-            <div id="path-container" class="space-y-12 relative">
-                <!-- Згенерується через JS -->
-            </div>
+            <div id="path-container" class="space-y-12 relative"></div>
         </div>
     </section>
 
-    <!-- СЕКЦІЯ 3: ГАЛЕРЕЯ -->
+    <!-- СЕКЦІЯ 3: ГАЛЕРЕЯ (СЛАЙДЕР) -->
     <section id="gallery" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 relative">
         <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-800 pb-6 mb-12 gap-6">
             <div>
@@ -146,177 +216,224 @@
             </div>
             
             <div class="flex items-center gap-4">
-                <button id="slider-prev" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors" aria-label="Попереднє фото">
-                    &#10094;
-                </button>
-                <button id="slider-next" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors" aria-label="Наступне фото">
-                    &#10095;
-                </button>
+                <button id="slider-prev" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors" aria-label="Попереднє фото">&#10094;</button>
+                <button id="slider-next" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors" aria-label="Наступне фото">&#10095;</button>
             </div>
         </div>
         
         <div id="gallery-viewport" class="overflow-hidden py-8 px-4 -mx-4 cursor-grab active:cursor-grabbing select-none">
-            <div id="gallery-track" class="flex transition-transform duration-500 ease-out gap-6 items-center">
-                <!-- Згенерується через JS -->
-            </div>
+            <div id="gallery-track" class="flex transition-transform duration-500 ease-out gap-6 items-center"></div>
         </div>
     </section>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex-col items-center justify-between p-4 md:p-8 select-none" role="dialog" aria-modal="true" aria-label="Перегляд зображення у повному розмірі">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl hover:text-brandOrange transition-colors z-50 p-2" aria-label="Закрити модальне вікно">
-            &times;
-        </button>
-
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex-col items-center justify-between p-4 md:p-8 select-none" role="dialog" aria-modal="true">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl hover:text-brandOrange transition-colors z-50 p-2">&times;</button>
         <div class="relative w-full h-full flex items-center justify-center my-auto">
-            <button id="lightbox-prev" class="absolute left-2 md:left-6 text-white/70 hover:text-brandOrange text-4xl p-4 transition-colors z-50" aria-label="Попереднє фото">
-                &#10094;
-            </button>
-
-            <img id="lightbox-img" src="" alt="Момент проєкту Перша вниз" class="max-h-[85vh] max-w-[90vw] object-contain shadow-2xl transition-all duration-300">
-
-            <button id="lightbox-next" class="absolute right-2 md:right-6 text-white/70 hover:text-brandOrange text-4xl p-4 transition-colors z-50" aria-label="Наступне фото">
-                &#10095;
-            </button>
+            <button id="lightbox-prev" class="absolute left-2 md:left-6 text-white/70 hover:text-brandOrange text-4xl p-4 transition-colors z-50">&#10094;</button>
+            <img id="lightbox-img" src="" alt="Момент проєкту" class="max-h-[85vh] max-w-[90vw] object-contain shadow-2xl transition-all duration-300">
+            <button id="lightbox-next" class="absolute right-2 md:right-6 text-white/70 hover:text-brandOrange text-4xl p-4 transition-colors z-50">&#10095;</button>
         </div>
-
-        <div id="lightbox-counter" class="text-textGray font-mono text-sm tracking-widest pb-2">
-            1 / 10
-        </div>
+        <div id="lightbox-counter" class="text-textGray font-mono text-sm tracking-widest pb-2">1 / 10</div>
     </div>
 
-    <!-- СЕКЦІЯ 4: КОМАНДА -->
+    <!-- СЕКЦІЯ 4: КОМАНДА (СЛАЙДЕР) -->
     <section id="team" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
-        <div class="flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-800 pb-6 mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-800 pb-6 mb-12 gap-6">
             <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight" data-i18n="team_title"></h2>
-            <span class="text-brandOrange font-bold tracking-widest text-lg md:text-xl mt-4 md:mt-0 uppercase" data-i18n="team_badge"></span>
+            
+            <div class="flex items-center gap-4">
+                <button id="team-prev" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors">&#10094;</button>
+                <button id="team-next" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors">&#10095;</button>
+            </div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Сергій -->
-            <div class="relative min-h-[420px] p-8 border border-neutral-800/80 rounded-sm overflow-hidden group flex flex-col justify-between transition-all duration-500 hover:border-brandOrange/80">
-                <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
-                     style="background-image: url('gallery/team/serhii.jpg'), url('https://placehold.co/600x800/151515/525252?text=SERHII');">
-                </div>
-                <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+        <div id="team-viewport" class="overflow-hidden py-4 -mx-2 px-2 cursor-grab active:cursor-grabbing select-none">
+            <div id="team-track" class="flex transition-transform duration-500 ease-out gap-8">
+                <!-- Сергій -->
+                <div class="team-card flex-shrink-0 w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] relative min-h-[420px] p-8 border border-neutral-800/80 rounded-sm overflow-hidden group flex flex-col justify-between transition-all duration-500 hover:border-brandOrange/80">
+                    <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" style="background-image: url('gallery/team/serhii.jpg');"></div>
+                    <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/90 to-transparent"></div>
 
-                <div class="relative z-10 flex justify-between items-start mb-12">
-                    <button onclick="openTeamPhoto('gallery/team/serhii.jpg', 'Сергій Катрич')" class="w-20 h-20 rounded-full border-2 border-brandOrange overflow-hidden shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none" title="Переглянути фото">
-                        <img src="gallery/team/serhii.jpg" 
-                             onerror="this.src='https://placehold.co/200x200/151515/d9531e?text=SK';" 
-                             class="w-full h-full object-cover origin-center" 
-                             style="transform: scale(4.5) translate(-7.5%, 16%);" 
-                             alt="Сергій Катрич">
-                    </button>
-                    <span class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full">FOUNDER</span>
-                </div>
+                    <div class="relative z-10 flex justify-between items-start mb-12">
+                        <button onclick="openTeamPhoto('gallery/team/serhii.jpg', 'Сергій Катрич')" class="w-20 h-20 rounded-full border-2 border-brandOrange overflow-hidden shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none">
+                            <img src="gallery/team/serhii.jpg" onerror="this.src='https://placehold.co/200x200/151515/d9531e?text=SK';" class="w-full h-full object-cover origin-center" style="transform: scale(4.5) translate(-7.5%, 16%);" alt="Сергій Катрич">
+                        </button>
+                        <span class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full" data-i18n="team_1_role"></span>
+                    </div>
 
-                <div class="relative z-10">
-                    <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="team_1_title"></h3>
-                    <p class="text-gray-300 leading-relaxed text-sm font-medium" data-i18n="team_1_desc"></p>
-                </div>
-            </div>
-
-            <!-- Анастасія -->
-            <div class="relative min-h-[420px] p-8 border border-neutral-800/80 rounded-sm overflow-hidden group flex flex-col justify-between transition-all duration-500 hover:border-brandOrange/80">
-                <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
-                     style="background-image: url('gallery/team/anastasiia.jpg'), url('https://placehold.co/600x800/151515/525252?text=ANASTASIIA');">
-                </div>
-                <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-
-                <div class="relative z-10 flex justify-between items-start mb-12">
-                    <button onclick="openTeamPhoto('gallery/team/anastasiia.jpg', 'Анастасія Хлібник')" class="w-20 h-20 rounded-full border-2 border-brandOrange overflow-hidden shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none" title="Переглянути фото">
-                        <img src="gallery/team/anastasiia.jpg" 
-                             onerror="this.src='https://placehold.co/200x200/151515/d9531e?text=AK';" 
-                             class="w-full h-full object-cover origin-center" 
-                             style="transform: scale(1.5) translate(-7.5%, 16%);" 
-                             alt="Анастасія Хлібник">
-                    </button>
-                    <span class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full">MEDIA</span>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="team_1_title"></h3>
+                        <p class="text-gray-300 leading-relaxed text-sm font-medium mb-4" data-i18n="team_1_desc"></p>
+                        
+                        <a href="https://instagram.com/gaspod3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-textGray hover:text-brandOrange transition-colors uppercase pt-2 border-t border-neutral-800/60 w-full">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span data-i18n="team_1_insta"></span>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="relative z-10">
-                    <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="team_2_title"></h3>
-                    <p class="text-gray-300 leading-relaxed text-sm font-medium" data-i18n="team_2_desc"></p>
-                </div>
-            </div>
+                <!-- Анастасія -->
+                <div class="team-card flex-shrink-0 w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] relative min-h-[420px] p-8 border border-neutral-800/80 rounded-sm overflow-hidden group flex flex-col justify-between transition-all duration-500 hover:border-brandOrange/80">
+                    <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" style="background-image: url('gallery/team/anastasiia.jpg');"></div>
+                    <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/90 to-transparent"></div>
 
-            <!-- Ілля -->
-            <div class="relative min-h-[420px] p-8 border border-neutral-800/80 rounded-sm overflow-hidden group flex flex-col justify-between transition-all duration-500 hover:border-brandOrange/80">
-                <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
-                     style="background-image: url('gallery/team/illia.jpg'), url('https://placehold.co/600x800/151515/525252?text=ILLIA');">
-                </div>
-                <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+                    <div class="relative z-10 flex justify-between items-start mb-12">
+                        <button onclick="openTeamPhoto('gallery/team/anastasiia.jpg', 'Анастасія Хлібник')" class="w-20 h-20 rounded-full border-2 border-brandOrange overflow-hidden shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none">
+                            <img src="gallery/team/anastasiia.jpg" onerror="this.src='https://placehold.co/200x200/151515/d9531e?text=AK';" class="w-full h-full object-cover origin-center" style="transform: scale(1.5) translate(-7.5%, 16%);" alt="Анастасія Хлібник">
+                        </button>
+                        <span class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full" data-i18n="team_2_role"></span>
+                    </div>
 
-                <div class="relative z-10 flex justify-between items-start mb-12">
-                    <button onclick="openTeamPhoto('gallery/team/illia.jpg', 'Ілля Терещенко')" class="w-20 h-20 rounded-full border-2 border-brandOrange overflow-hidden shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none" title="Переглянути фото">
-                        <img src="gallery/team/illia.jpg" 
-                             onerror="this.src='https://placehold.co/200x200/151515/d9531e?text=IT';" 
-                             class="w-full h-full object-cover origin-center" 
-                             style="transform: scale(2.6) translate(-30.5%, 20%);" 
-                             alt="Ілля Терещенко">
-                    </button>
-                    <span class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full">WISDOM MASTER</span>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="team_2_title"></h3>
+                        <p class="text-gray-300 leading-relaxed text-sm font-medium mb-4" data-i18n="team_2_desc"></p>
+                        
+                        <a href="https://instagram.com/khlibnyk_nastya" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-textGray hover:text-brandOrange transition-colors uppercase pt-2 border-t border-neutral-800/60 w-full">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span data-i18n="team_2_insta"></span>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="relative z-10">
-                    <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="team_3_title"></h3>
-                    <p class="text-gray-300 leading-relaxed text-sm font-medium" data-i18n="team_3_desc"></p>
+                <!-- Ілля -->
+                <div class="team-card flex-shrink-0 w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] relative min-h-[420px] p-8 border border-neutral-800/80 rounded-sm overflow-hidden group flex flex-col justify-between transition-all duration-500 hover:border-brandOrange/80">
+                    <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" style="background-image: url('gallery/team/illia.jpg');"></div>
+                    <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/90 to-transparent"></div>
+
+                    <div class="relative z-10 flex justify-between items-start mb-12">
+                        <button onclick="openTeamPhoto('gallery/team/illia.jpg', 'Ілля Терещенко')" class="w-20 h-20 rounded-full border-2 border-brandOrange overflow-hidden shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none">
+                            <img src="gallery/team/illia.jpg" onerror="this.src='https://placehold.co/200x200/151515/d9531e?text=IT';" class="w-full h-full object-cover origin-center" style="transform: scale(2.6) translate(-30.5%, 20%);" alt="Ілля Терещенко">
+                        </button>
+                        <span class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full" data-i18n="team_3_role"></span>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="team_3_title"></h3>
+                        <p class="text-gray-300 leading-relaxed text-sm font-medium mb-4" data-i18n="team_3_desc"></p>
+                        
+                        <a href="https://instagram.com/illiativ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-textGray hover:text-brandOrange transition-colors uppercase pt-2 border-t border-neutral-800/60 w-full">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span data-i18n="team_3_insta"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- СЕКЦІЯ 5: ПАРТНЕРИ -->
-    <section id="partners" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 bg-[#151515]">
-        <div class="flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-800 pb-6 mb-12">
-            <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight" data-i18n="partners_title"></h2>
-            <span class="text-textGray font-medium tracking-widest text-sm uppercase mt-4 md:mt-0" data-i18n="partners_subtitle"></span>
-        </div>
+    <!-- СЕКЦІЯ 5: FAQ (ЧАСТІ ЗАПИТАННЯ) -->
+    <section id="faq" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 bg-[#151515]">
+        <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight border-b border-neutral-800 pb-6 mb-12 flex flex-wrap gap-x-3">
+            <span class="text-white" data-i18n="faq_title_part1"></span>
+            <span class="text-brandOrange" data-i18n="faq_title_part2"></span>
+        </h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <!-- 1. ГО Мотодопомога Львів -->
-            <a href="https://facebook.com/motodopomoga" target="_blank" rel="noopener noreferrer" 
-               class="p-8 bg-[#0f0f0f] border border-brandOrange/50 hover:border-brandOrange transition-all duration-300 rounded-sm flex flex-col items-center justify-center text-center group shadow-lg">
-                <div class="h-24 flex items-center justify-center mb-6 overflow-hidden w-full">
-                    <img src="gallery/partners/motodopomoga.png" 
-                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'100\' viewBox=\'0 0 300 100\'><rect width=\'100%\' height=\'100%\' fill=\'%23151515\'/><text x=\'50%\' y=\'55%\' font-family=\'Montserrat, sans-serif\' font-weight=\'bold\' font-size=\'18\' fill=\'%23d9531e\' text-anchor=\'middle\' dominant-baseline=\'middle\'>MOTODOPOMOGA</text></svg>';" 
-                         alt="ГО Мотодопомога Львів" 
-                         class="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <!-- Питання 1 -->
+            <div class="faq-item bg-[#0f0f0f] border border-neutral-800 hover:border-neutral-700 transition-colors rounded-sm overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none group cursor-pointer">
+                    <span class="font-bold text-lg sm:text-xl text-white uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="faq_q1"></span>
+                    <div class="flex items-center gap-2 flex-shrink-0">
+                        <span class="faq-btn-text text-xs font-bold uppercase tracking-widest text-textGray hidden sm:inline transition-colors" data-i18n="faq_expand"></span>
+                        <span class="faq-arrow text-xl text-textGray transition-transform duration-300 transform">∨</span>
+                    </div>
+                </button>
+                <div class="faq-answer px-6 pb-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal border-t border-neutral-800/50 pt-4">
+                    <p data-i18n="faq_a1"></p>
                 </div>
-                <h3 class="text-xl font-bold text-white group-hover:text-brandOrange transition-colors uppercase tracking-wider mb-2">ГО МОТОДОПОМОГА ЛЬВІВ</h3>
-                <span class="text-xs text-brandOrange tracking-widest uppercase font-bold" data-i18n="partner_0_desc"></span>
-            </a>
+            </div>
 
-            <!-- 2. Lemberg Moto -->
-            <a href="https://lembergmoto.com.ua/" target="_blank" rel="noopener noreferrer" 
-               class="p-8 bg-[#0f0f0f] border border-neutral-800 hover:border-brandOrange transition-all duration-300 rounded-sm flex flex-col items-center justify-center text-center group shadow-lg">
-                <div class="h-24 flex items-center justify-center mb-6 overflow-hidden w-full">
-                    <img src="gallery/partners/lemberg_moto.png" 
-                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'100\' viewBox=\'0 0 300 100\'><rect width=\'100%\' height=\'100%\' fill=\'%23151515\'/><text x=\'50%\' y=\'55%\' font-family=\'Montserrat, sans-serif\' font-weight=\'bold\' font-size=\'20\' fill=\'%23d9531e\' text-anchor=\'middle\' dominant-baseline=\'middle\'>LEMBERG MOTO</text></svg>';" 
-                         alt="Lemberg Moto Logo" 
-                         class="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105">
+            <!-- Питання 2 -->
+            <div class="faq-item bg-[#0f0f0f] border border-neutral-800 hover:border-neutral-700 transition-colors rounded-sm overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none group cursor-pointer">
+                    <span class="font-bold text-lg sm:text-xl text-white uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="faq_q2"></span>
+                    <div class="flex items-center gap-2 flex-shrink-0">
+                        <span class="faq-btn-text text-xs font-bold uppercase tracking-widest text-textGray hidden sm:inline transition-colors" data-i18n="faq_expand"></span>
+                        <span class="faq-arrow text-xl text-textGray transition-transform duration-300 transform">∨</span>
+                    </div>
+                </button>
+                <div class="faq-answer px-6 pb-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal border-t border-neutral-800/50 pt-4">
+                    <p data-i18n="faq_a2"></p>
                 </div>
-                <h3 class="text-xl font-bold text-white group-hover:text-brandOrange transition-colors uppercase tracking-wider mb-2">LEMBERG MOTO</h3>
-                <span class="text-xs text-textGray tracking-widest uppercase font-semibold" data-i18n="partner_1_desc"></span>
-            </a>
+            </div>
 
-            <!-- 3. Zgraya -->
-            <a href="https://zgraya.org/" target="_blank" rel="noopener noreferrer" 
-               class="p-8 bg-[#0f0f0f] border border-neutral-800 hover:border-brandOrange transition-all duration-300 rounded-sm flex flex-col items-center justify-center text-center group shadow-lg">
-                <div class="h-24 flex items-center justify-center mb-6 overflow-hidden w-full">
-                    <img src="gallery/partners/zgraya.png" 
-                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'100\' viewBox=\'0 0 300 100\'><rect width=\'100%\' height=\'100%\' fill=\'%23151515\'/><text x=\'50%\' y=\'55%\' font-family=\'Montserrat, sans-serif\' font-weight=\'bold\' font-size=\'22\' fill=\'%23ffffff\' text-anchor=\'middle\' dominant-baseline=\'middle\'>ZGRAYA</text></svg>';" 
-                         alt="Zgraya Logo" 
-                         class="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105">
+            <!-- Питання 3 -->
+            <div class="faq-item bg-[#0f0f0f] border border-neutral-800 hover:border-neutral-700 transition-colors rounded-sm overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none group cursor-pointer">
+                    <span class="font-bold text-lg sm:text-xl text-white uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="faq_q3"></span>
+                    <div class="flex items-center gap-2 flex-shrink-0">
+                        <span class="faq-btn-text text-xs font-bold uppercase tracking-widest text-textGray hidden sm:inline transition-colors" data-i18n="faq_expand"></span>
+                        <span class="faq-arrow text-xl text-textGray transition-transform duration-300 transform">∨</span>
+                    </div>
+                </button>
+                <div class="faq-answer px-6 pb-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal border-t border-neutral-800/50 pt-4">
+                    <p data-i18n="faq_a3"></p>
                 </div>
-                <h3 class="text-xl font-bold text-white group-hover:text-brandOrange transition-colors uppercase tracking-wider mb-2">ZGRAYA</h3>
-                <span class="text-xs text-textGray tracking-widest uppercase font-semibold" data-i18n="partner_2_desc"></span>
-            </a>
+            </div>
+
+            <!-- Питання 4 -->
+            <div class="faq-item bg-[#0f0f0f] border border-neutral-800 hover:border-neutral-700 transition-colors rounded-sm overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none group cursor-pointer">
+                    <span class="font-bold text-lg sm:text-xl text-white uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="faq_q4"></span>
+                    <div class="flex items-center gap-2 flex-shrink-0">
+                        <span class="faq-btn-text text-xs font-bold uppercase tracking-widest text-textGray hidden sm:inline transition-colors" data-i18n="faq_expand"></span>
+                        <span class="faq-arrow text-xl text-textGray transition-transform duration-300 transform">∨</span>
+                    </div>
+                </button>
+                <div class="faq-answer px-6 pb-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal border-t border-neutral-800/50 pt-4">
+                    <p data-i18n="faq_a4"></p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- СЕКЦІЯ 6: ФУТЕР -->
+    <!-- СЕКЦІЯ 6: ПАРТНЕРИ (СЛАЙДЕР) -->
+    <section id="partners" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
+        <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-800 pb-6 mb-12 gap-6">
+            <div>
+                <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight" data-i18n="partners_title"></h2>
+                <p class="text-textGray font-medium tracking-widest text-sm uppercase mt-2" data-i18n="partners_subtitle"></p>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="partners-prev" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors">&#10094;</button>
+                <button id="partners-next" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors">&#10095;</button>
+            </div>
+        </div>
+
+        <div id="partners-viewport" class="overflow-hidden py-4 -mx-2 px-2 cursor-grab active:cursor-grabbing select-none">
+            <div id="partners-track" class="flex transition-transform duration-500 ease-out gap-8">
+                <!-- Lemberg Moto -->
+                <a href="https://lembergmoto.com.ua/" target="_blank" rel="noopener noreferrer" 
+                   class="partner-card flex-shrink-0 w-full sm:w-[calc(50%-16px)] p-8 bg-[#0f0f0f] border border-neutral-800 hover:border-brandOrange transition-all duration-300 rounded-sm flex flex-col items-center justify-center text-center group shadow-lg">
+                    <div class="h-24 flex items-center justify-center mb-6 overflow-hidden w-full">
+                        <img src="gallery/partners/lemberg_moto.png" 
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'100\' viewBox=\'0 0 300 100\'><rect width=\'100%\' height=\'100%\' fill=\'%23151515\'/><text x=\'50%\' y=\'55%\' font-family=\'Montserrat, sans-serif\' font-weight=\'bold\' font-size=\'20\' fill=\'%23d9531e\' text-anchor=\'middle\' dominant-baseline=\'middle\'>LEMBERG MOTO</text></svg>';" 
+                             alt="Lemberg Moto Logo" 
+                             class="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105">
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-brandOrange transition-colors uppercase tracking-wider mb-2">LEMBERG MOTO</h3>
+                    <span class="text-xs text-textGray tracking-widest uppercase font-semibold" data-i18n="partner_1_desc"></span>
+                </a>
+
+                <!-- Zgraya -->
+                <a href="https://zgraya.org/" target="_blank" rel="noopener noreferrer" 
+                   class="partner-card flex-shrink-0 w-full sm:w-[calc(50%-16px)] p-8 bg-[#0f0f0f] border border-neutral-800 hover:border-brandOrange transition-all duration-300 rounded-sm flex flex-col items-center justify-center text-center group shadow-lg">
+                    <div class="h-24 flex items-center justify-center mb-6 overflow-hidden w-full">
+                        <img src="gallery/partners/zgraya.png" 
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'100\' viewBox=\'0 0 300 100\'><rect width=\'100%\' height=\'100%\' fill=\'%23151515\'/><text x=\'50%\' y=\'55%\' font-family=\'Montserrat, sans-serif\' font-weight=\'bold\' font-size=\'22\' fill=\'%23ffffff\' text-anchor=\'middle\' dominant-baseline=\'middle\'>ZGRAYA</text></svg>';" 
+                             alt="Zgraya Logo" 
+                             class="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105">
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-brandOrange transition-colors uppercase tracking-wider mb-2">ZGRAYA</h3>
+                    <span class="text-xs text-textGray tracking-widest uppercase font-semibold" data-i18n="partner_2_desc"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦІЯ 7: ФУТЕР -->
     <section id="apply" class="relative max-w-[1600px] mx-auto overflow-hidden border-t-4 border-brandOrange">
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 opacity-5 pointer-events-none w-full text-center">
             <span class="text-[10rem] lg:text-[15rem] font-black text-white whitespace-nowrap tracking-tighter">FIRST DOWN</span>
@@ -330,7 +447,7 @@
                     </h2>
                     
                     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8 mt-8 border-t border-neutral-800/80 pt-8">
-                        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white hover:text-brandOrange transition-colors" aria-label="Наш Instagram">
+                        <a href="https://www.instagram.com/first.down.ua" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white hover:text-brandOrange transition-colors" aria-label="Наш Instagram">
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                             <span class="font-bold tracking-widest text-lg" data-i18n="footer_insta"></span>
                         </a>
@@ -339,23 +456,23 @@
 
                         <a href="https://facebook.com/motodopomoga" target="_blank" rel="noopener noreferrer" class="flex flex-col items-start group" title="Перейти на сторінку ГО Мотодопомога Львів">
                             <img src="gallery/partners/motodopomoga.png" 
-                                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'240\' height=\'60\' viewBox=\'0 0 240 60\'><rect width=\'100%\' height=\'100%\' fill=\'%23151515\'/><text x=\'50%\' y=\'55%\' font-family=\'Montserrat, sans-serif\' font-weight=\'bold\' font-size=\'16\' fill=\'%23d9531e\' text-anchor=\'middle\' dominant-baseline=\'middle\'>MOTODOPOMOGA</text></svg>';" 
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'240\' height=\'60\' viewBox=\'0 0 240 60\'><rect width=\'100%\' height=\'100%\' fill=\'%23151515\'/><text x=\'50%\' y=\'55%\' font-family=\'Montserrat, sans-serif\' font-weight=\'bold\' font-size=\'16\' fill=\'%23ffffff\' text-anchor=\'middle\' dominant-baseline=\'middle\'>MOTODOPOMOGA</text></svg>';" 
                                  alt="ГО Мотодопомога Львів" 
-                                 class="h-14 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105">
-                            <span class="text-xs font-bold tracking-widest text-gray-400 group-hover:text-brandOrange transition-colors uppercase mt-2" data-i18n="footer_motodopomoga_link"></span>
+                                 class="h-14 sm:h-16 w-auto object-contain motodopomoga-logo">
+                            <span class="text-xs font-bold tracking-widest text-gray-400 group-hover:text-brandOrange transition-colors uppercase mt-3" data-i18n="footer_motodopomoga_link"></span>
                         </a>
                     </div>
                 </div>
 
                 <div class="text-left lg:text-right w-full lg:w-auto">
                     <p class="text-gray-400 font-bold tracking-widest text-sm mb-4 uppercase" data-i18n="footer_ready"></p>
-                    <a href="https://forms.google.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-brandOrange hover:bg-[#bd4517] text-white font-bold py-6 px-12 uppercase tracking-wider text-xl w-full lg:w-auto text-center transition-colors rounded-sm shadow-lg" data-i18n="footer_btn"></a>
+                    <a href="https://forms.gle/SpJBqmKMYH8tFTDP6" target="_blank" rel="noopener noreferrer" class="inline-block bg-brandOrange hover:bg-[#bd4517] text-white font-bold py-6 px-12 uppercase tracking-wider text-xl w-full lg:w-auto text-center transition-colors rounded-sm shadow-lg" data-i18n="footer_btn"></a>
                 </div>
             </div>
 
             <div class="flex flex-col md:flex-row justify-between pt-8 border-t border-neutral-800 text-sm font-medium tracking-widest text-neutral-500 uppercase gap-4">
                 <span data-i18n="footer_copy"></span>
-                <span data-i18n="footer_partners"></span>
+                <a href="mailto:main@firstdown.org.ua" class="hover:text-brandOrange transition-colors" data-i18n="footer_partners"></a>
             </div>
         </div>
     </section>
@@ -364,7 +481,35 @@
     <script>
         let currentLang = localStorage.getItem('firstDownLang') || 'ua';
 
-        // 1. ДИНАМІЧНИЙ РОАДМАП З ПУНКТИРОМ В КІНЦІ
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('flex');
+            }
+        }
+
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isOpen = item.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+                const btnText = el.querySelector('.faq-btn-text');
+                if (btnText && typeof translations !== 'undefined') {
+                    btnText.innerHTML = translations[currentLang]['faq_expand'];
+                }
+            });
+
+            if (!isOpen) {
+                item.classList.add('active');
+                const btnText = item.querySelector('.faq-btn-text');
+                if (btnText && typeof translations !== 'undefined') {
+                    btnText.innerHTML = translations[currentLang]['faq_collapse'];
+                }
+            }
+        }
+
         function renderPathSteps() {
             const container = document.getElementById('path-container');
             if (!container || typeof translations === 'undefined') return;
@@ -384,6 +529,7 @@
                 const num = i < 10 ? `0${i}` : `${i}`;
                 const titleKey = `path_${num}_title`;
                 const descKey = `path_${num}_desc`;
+                const tagKey = `path_${num}_tag`;
 
                 const isEven = i % 2 === 0;
                 const isLast = i === totalSteps;
@@ -395,6 +541,10 @@
                     ? 'border-l-2 border-dashed border-brandOrange/60 h-24' 
                     : 'bg-brandOrange/40 h-[calc(100%+3rem)] w-0.5';
 
+                const cardStyle = isLast
+                    ? 'bg-[#0f0f0f] p-6 lg:p-8 border-2 border-brandOrange/80 hover:border-brandOrange transition-colors duration-300 rounded-sm shadow-xl relative z-10'
+                    : 'bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl relative z-10';
+
                 stepDiv.innerHTML = `
                     <div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-3 ${lineStyle} z-0"></div>
 
@@ -403,9 +553,10 @@
                     </div>
 
                     <div class="ml-12 md:ml-0 md:w-1/2 ${isEven ? 'md:pl-12' : 'md:pr-12'} w-full">
-                        <div class="bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl relative z-10">
+                        <div class="${cardStyle}">
                             <div class="flex items-center justify-between mb-4">
                                 <span class="text-brandOrange font-black text-2xl tracking-wider">${num}</span>
+                                ${dict[tagKey] ? `<span class="text-[10px] font-bold tracking-widest text-brandOrange uppercase bg-brandOrange/10 border border-brandOrange/30 px-2 py-0.5 rounded">${dict[tagKey]}</span>` : ''}
                             </div>
                             <h3 class="text-white font-bold tracking-wider text-xl mb-3 uppercase" data-i18n="${titleKey}">${dict[titleKey]}</h3>
                             <p class="text-textGray leading-relaxed text-sm lg:text-base font-normal" data-i18n="${descKey}">${dict[descKey] || ''}</p>
@@ -418,7 +569,6 @@
             }
         }
 
-        // 2. ПЕРЕМИКАННЯ МОВИ
         function switchLang(lang) {
             currentLang = lang;
             localStorage.setItem('firstDownLang', lang);
@@ -448,7 +598,90 @@
             switchLang(currentLang);
         }
 
-        // 3. ГАЛЕРЕЯ ТА СЛАЙДЕР
+        function createSlider(config) {
+            const track = document.getElementById(config.trackId);
+            const viewport = document.getElementById(config.viewportId);
+            const prevBtn = document.getElementById(config.prevBtnId);
+            const nextBtn = document.getElementById(config.nextBtnId);
+
+            if (!track || !viewport) return;
+
+            let currentIndex = 0;
+
+            function getVisibleCount() {
+                if (window.innerWidth >= 1024) return config.visibleLg || 3;
+                if (window.innerWidth >= 640) return config.visibleMd || 2;
+                return 1;
+            }
+
+            function updateNavButtons() {
+                const total = track.children.length;
+                const visible = getVisibleCount();
+
+                // Автоматично приховуємо кнопки, якщо всі картки вміщаються на екрані
+                if (total <= visible) {
+                    if (prevBtn) prevBtn.style.display = 'none';
+                    if (nextBtn) nextBtn.style.display = 'none';
+                } else {
+                    if (prevBtn) prevBtn.style.display = 'flex';
+                    if (nextBtn) nextBtn.style.display = 'flex';
+                }
+            }
+
+            function update() {
+                const total = track.children.length;
+                if (total === 0) return;
+
+                const visible = getVisibleCount();
+                const maxIndex = Math.max(0, total - visible);
+                
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+                const firstChild = track.children[0];
+                const cardWidth = firstChild ? firstChild.offsetWidth : 0;
+                const gap = 32;
+                const offset = currentIndex * (cardWidth + gap);
+
+                track.style.transform = `translateX(-${offset}px)`;
+                updateNavButtons();
+            }
+
+            function next() {
+                const total = track.children.length;
+                const visible = getVisibleCount();
+                const maxIndex = Math.max(0, total - visible);
+
+                currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+                update();
+            }
+
+            function prev() {
+                const total = track.children.length;
+                const visible = getVisibleCount();
+                const maxIndex = Math.max(0, total - visible);
+
+                currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+                update();
+            }
+
+            if (nextBtn) nextBtn.addEventListener('click', next);
+            if (prevBtn) prevBtn.addEventListener('click', prev);
+            window.addEventListener('resize', update);
+
+            let startX = 0;
+            viewport.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+            viewport.addEventListener('touchend', (e) => {
+                const diff = e.changedTouches[0].clientX - startX;
+                if (Math.abs(diff) > 40) {
+                    if (diff < 0) next();
+                    else prev();
+                }
+            }, { passive: true });
+
+            update();
+        }
+
+        // ГАЛЕРЕЯ
         const galleryTrack = document.getElementById('gallery-track');
         const galleryViewport = document.getElementById('gallery-viewport');
         const prevBtn = document.getElementById('slider-prev');
@@ -566,10 +799,17 @@
             nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
             prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
 
-            initTouchSwipe(galleryViewport, prevSlide, nextSlide);
+            let startX = 0;
+            galleryViewport.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+            galleryViewport.addEventListener('touchend', (e) => {
+                const diff = e.changedTouches[0].clientX - startX;
+                if (Math.abs(diff) > 40) {
+                    if (diff < 0) { nextSlide(); startAutoplay(); }
+                    else { prevSlide(); startAutoplay(); }
+                }
+            }, { passive: true });
         }
 
-        // LIGHTBOX
         function openLightbox(idx) {
             isTeamPhotoActive = false;
             activeIndex = idx;
@@ -623,24 +863,10 @@
             updateLightbox();
         }
 
-        lightbox.addEventListener('click', () => {
-            closeLightbox();
-        });
-
-        lightboxClose.addEventListener('click', (e) => {
-            e.stopPropagation();
-            closeLightbox();
-        });
-
-        lightboxNext.addEventListener('click', (e) => {
-            e.stopPropagation();
-            lightboxNextSlide();
-        });
-
-        lightboxPrev.addEventListener('click', (e) => {
-            e.stopPropagation();
-            lightboxPrevSlide();
-        });
+        lightbox.addEventListener('click', closeLightbox);
+        lightboxClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+        lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); lightboxNextSlide(); });
+        lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); lightboxPrevSlide(); });
 
         document.addEventListener('keydown', (e) => {
             if (lightbox.classList.contains('hidden')) return;
@@ -649,32 +875,27 @@
             if (e.key === 'ArrowLeft') lightboxPrevSlide();
         });
 
-        initTouchSwipe(lightbox, lightboxPrevSlide, lightboxNextSlide);
-
-        function initTouchSwipe(element, onSwipeRight, onSwipeLeft) {
-            let startX = 0;
-            let startY = 0;
-
-            element.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-                startY = e.touches[0].clientY;
-            }, { passive: true });
-
-            element.addEventListener('touchend', (e) => {
-                const diffX = e.changedTouches[0].clientX - startX;
-                const diffY = e.changedTouches[0].clientY - startY;
-
-                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-                    if (diffX < 0) {
-                        onSwipeLeft();
-                    } else {
-                        onSwipeRight();
-                    }
-                }
-            }, { passive: true });
-        }
-
         loadGalleryImages();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createSlider({
+                trackId: 'team-track',
+                viewportId: 'team-viewport',
+                prevBtnId: 'team-prev',
+                nextBtnId: 'team-next',
+                visibleLg: 3,
+                visibleMd: 2
+            });
+
+            createSlider({
+                trackId: 'partners-track',
+                viewportId: 'partners-viewport',
+                prevBtnId: 'partners-prev',
+                nextBtnId: 'partners-next',
+                visibleLg: 2,
+                visibleMd: 2
+            });
+        });
     </script>
 </body>
 </html>
