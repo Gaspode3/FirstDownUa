@@ -2,20 +2,25 @@ const translations = {
   "ua": {
     "nav_brand": "ПЕРША ВНИЗ",
     "nav_about": "ПРО ПРОЄКТ",
-    "nav_fleet": "МОТОПАРК",
     "nav_path": "НАШ ШЛЯХ",
     "nav_team": "КОМАНДА",
+    "nav_partners": "ПАРТНЕРИ",
     "nav_btn": "ПОДАТИ ЗАЯВКУ",
-    
+
+    "under_aegis": "ГО \"МОТОДОПОМОГА ЛЬВІВ\"",
+    "mission_badge": "МІСІЯ ПРОЄКТУ",
+    "hero_title_part1": "ПЕРША",
+    "hero_title_part2": "ВНИЗ",
+
     "mission_part1": "МІСІЯ",
     "mission_part2": "ПРОЄКТУ",
-    "mission_p1": "Наш проєкт створений для ветеранів з ампутаціями, які <strong>ніколи раніше не їздили на мотоциклі</strong>, але мали таку мрію.",
+    "mission_p1": "Наш проєкт створений під егідою ГО 'Мотодопомога Львів' для ветеранів з ампутаціями, які <strong>ніколи раніше не їздили на мотоциклі</strong>, але мали таку мрію.",
     "mission_p2": "Може здатись, що поранення назавжди закрило ці двері, але це не так!",
     "mission_quote": "МИ НАДАЄМО БЕЗПЕЧНИЙ ПРОСТІР НА ЗАКРИТОМУ ТРЕКУ, АДАПТОВАНІ МОТОЦИКЛИ, КВАЛІФІКОВАНИХ ІНСТРУКТОРІВ ТА ПІДТРИМКУ КОМ'ЮНІТІ.",
     
     "path_title": "НАШ ШЛЯХ",
     "path_01_title": "ПЕРШИЙ ДОСВІД",
-    "path_01_desc": "Знайомство з другом Вікінгом. Він розповідає про свою мрію і шкодує, що не встиг спробувати. Ми впевнені, що питання \"спробувати\" - взагалі не є проблемою, тож обдзвонюємо мотошколи, проте ніхто не готовий братись за таку авантюру, адже немає ні байків, ні інструкторів, готових вписатись в таку авантюру.",
+    "path_01_desc": "Знайомство з другом Вікінгом. Він розповідає про свою мрію і шкодує, що не встиг спробувати. Ми впевнені, що питання \"спробувати\" - взагалі не є проблема, тож обдзвонюємо мотошколи, проте ніхто не готовий братись за таку авантюру, адже немає ні байків, ні інструкторів, готових вписатись в таку авантюру.",
     "path_02_title": "КІНЬ",
     "path_02_desc": "За власний кошт купуємо мотоцикл в іншого воїна та адаптуємо під поранення Євгена. Паралельно знаходимо майданчик, та починаємо займатись.",
     "path_03_title": "ПЕРШІ КРОКИ",
@@ -34,31 +39,43 @@ const translations = {
     "team_title": "КОМАНДА",
     "team_badge": "",
     "team_1_title": "Сергій Катрич",
-    "team_1_desc": "Засновник. Реагувальник та інструктор у ГО 'Мотодопомога', госпітальєр та просто розробник ігор.",
+    "team_1_desc": "Засновник. Реагувальник та інструктор у ГО 'Мотодопомога Львів', госпітальєр та просто розробник ігор.",
     "team_2_title": "Анастасія Хлібник",
     "team_2_desc": "Надзвичайна фотографка та журналістка. Людина, яка фіксує всі емоції: відповідає за фотографії, тексти, візуал, соцмережі та всі інші перемовини :)",
     "team_3_title": "Ілля Терещенко",
-    "team_3_desc": "Професійний інструктор з дружньої мотошколи \"Lemberg Moto\". Гуру, що розповість і як їхати в коліно і чому потрібно гріти гуму.",
+    "team_3_desc": "Професійний інструктор з дружньої мотошколи. Гуру, що розповість і як їхати в коліно і чому потрібно гріти гуму.",
+
+    "partners_title": "ПАРТНЕРИ",
+    "partners_subtitle": "РАЗОМ РОБИМО БІЛЬШЕ",
+    "partner_0_desc": "ГОЛОВНИЙ ОРГАНІЗАТОР",
+    "partner_1_desc": "МОТОШКОЛА",
+    "partner_2_desc": "ІНФОРМАЦІЙНА ПІДТРИМКА",
 
     "footer_brand1": "ПЕРША",
     "footer_brand2": "ВНИЗ",
     "footer_insta": "ПІДПИСАТИСЯ",
+    "footer_motodopomoga_link": "ГО \"МОТОДОПОМОГА ЛЬВІВ\" ↗",
     "footer_ready": "ГОТОВИЙ СПРОБУВАТИ ТЕ, ПРО ЩО ТАК ДАВНО МРІЯВ?",
     "footer_btn": "ЗАПОВНИТИ АНКЕТУ",
-    "footer_copy": "© 2026 ПРОЄКТ 'ПЕРША ВНИЗ'.",
+    "footer_copy": "© 2026 ПРОЄКТ 'ПЕРША ВНИЗ' ТА ГО 'МОТОДОПОМОГА ЛЬВІВ'.",
     "footer_partners": "ДЛЯ КОНТАКТІВ: MAIN@FIRSTDOWN.ORG.UA"
   },
   "en": {
     "nav_brand": "FIRST DOWN",
     "nav_about": "ABOUT",
-    "nav_fleet": "FLEET",
     "nav_path": "OUR PATH",
     "nav_team": "TEAM",
+    "nav_partners": "PARTNERS",
     "nav_btn": "APPLY NOW",
-    
+
+    "under_aegis": "NGO \"MOTODOPOMOGA LVIV\"",
+    "mission_badge": "PROJECT MISSION",
+    "hero_title_part1": "FIRST",
+    "hero_title_part2": "DOWN",
     "mission_part1": "PROJECT",
     "mission_part2": "MISSION",
-    "mission_p1": "Our project is created for amputee veterans who have <strong>never ridden a motorcycle before</strong>, but shared this dream.",
+
+    "mission_p1": "Our project was created under the aegis of NGO 'Motodopomoga Lviv' for amputee veterans who have <strong>never ridden a motorcycle before</strong>, but shared this dream.",
     "mission_p2": "It might seem that combat injury closes this door forever, but that is simply not true!",
     "mission_quote": "WE PROVIDE A SAFE SPACE ON A CLOSED TRACK, ADAPTED MOTORCYCLES, QUALIFIED INSTRUCTORS, AND COMMUNITY SUPPORT.",
     
@@ -83,18 +100,25 @@ const translations = {
     "team_title": "TEAM",
     "team_badge": "",
     "team_1_title": "Serhii Katrych",
-    "team_1_desc": "Founder. First responder and instructor at 'Motohelp' NGO, Hospitaller combat medic, and simply a game developer.",
+    "team_1_desc": "Founder. First responder and instructor at NGO 'Motodopomoga Lviv', Hospitaller combat medic, and simply a game developer.",
     "team_2_title": "Anastasiia Khlibnyk",
     "team_2_desc": "Extraordinary photographer and journalist. The person who captures every emotion: in charge of photography, copy, visuals, social media, and all negotiations :)",
     "team_3_title": "Illia Tereshchenko",
-    "team_3_desc": "Professional instructor from a partner moto school \"Lemberg Moto\". A guru who will teach you how to drag a knee and explain why warming up tires matters.",
+    "team_3_desc": "Professional instructor from a partner moto school. A guru who will teach you how to drag a knee and explain why warming up tires matters.",
+
+    "partners_title": "PARTNERS",
+    "partners_subtitle": "TOGETHER WE DO MORE",
+    "partner_0_desc": "MAIN ORGANIZER",
+    "partner_1_desc": "MOTORCYCLE SCHOOL",
+    "partner_2_desc": "MEDIA SUPPORT",
 
     "footer_brand1": "FIRST",
     "footer_brand2": "DOWN",
     "footer_insta": "FOLLOW US",
+    "footer_motodopomoga_link": "NGO \"MOTODOPOMOGA LVIV\" ↗",
     "footer_ready": "READY TO TRY WHAT YOU'VE DREAMED OF FOR SO LONG?",
     "footer_btn": "FILL OUT THE FORM",
-    "footer_copy": "© 2026 FIRST DOWN PROJECT.",
+    "footer_copy": "© 2026 FIRST DOWN PROJECT & NGO 'MOTODOPOMOGA LVIV'.",
     "footer_partners": "FOR CONTACTS: MAIN@FIRSTDOWN.ORG.UA"
   }
 };
