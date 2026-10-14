@@ -86,14 +86,12 @@
     </section>
 
 <!-- Секція НАШ ШЛЯХ (Вертикальний роадмап) -->
+    <!-- Секція НАШ ШЛЯХ (Вертикальний роадмап) -->
     <section id="path" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 bg-[#151515]">
         <h2 class="text-3xl sm:text-4xl font-bold tracking-widest mb-16 border-b border-neutral-800 pb-6 uppercase text-white" data-i18n="path_title">НАШ ШЛЯХ</h2>
         
         <!-- Контейнер таймлайну -->
-        <div class="relative max-w-5xl mx-auto">
-            <!-- Помаранчева вертикальна лінія по центру / зліва -->
-            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-brandOrange/40 transform -translate-x-1/2"></div>
-            
+        <div class="relative max-w-5xl mx-auto pb-16">
             <div id="path-container" class="space-y-12 relative">
                 <!-- Динамічно згенерується через JS -->
             </div>
@@ -185,7 +183,7 @@
         let currentLang = localStorage.getItem('firstDownLang') || 'ua';
 
         // Автоматичне побудування кроків шляху з translations.js
-        // Динамічна генерація роадмапу у вигляді таймлайну
+        // Динамічна генерація роадмапу із пунктиром в кінці
         function renderPathSteps() {
             const container = document.getElementById('path-container');
             if (!container || typeof translations === 'undefined') return;
@@ -193,21 +191,37 @@
             container.innerHTML = '';
             const dict = translations[currentLang] || {};
 
-            let i = 1;
+            // Спочатку підраховуємо загальну кількість кроків
+            let totalSteps = 0;
             while (true) {
+                const num = (totalSteps + 1) < 10 ? `0${totalSteps + 1}` : `${totalSteps + 1}`;
+                if (!dict[`path_${num}_title`]) break;
+                totalSteps++;
+            }
+
+            let i = 1;
+            while (i <= totalSteps) {
                 const num = i < 10 ? `0${i}` : `${i}`;
                 const titleKey = `path_${num}_title`;
                 const descKey = `path_${num}_desc`;
 
-                if (!dict[titleKey]) break;
-
                 const isEven = i % 2 === 0;
+                const isLast = i === totalSteps;
 
                 const stepDiv = document.createElement('div');
-                // Чергування ліво/право на великих екранах, вертикальний список на мобільних
                 stepDiv.className = `relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''} group`;
 
+                // Лінія вниз від цієї точки:
+                // Якщо це НЕ останній крок — суцільна лінія
+                // Якщо це ОСТАННІЙ крок — пунктирна лінія, що вказує на майбутнє
+                const lineStyle = isLast 
+                    ? 'border-l-2 border-dashed border-brandOrange/60 h-24' 
+                    : 'bg-brandOrange/40 h-[calc(100%+3rem)] w-0.5';
+
                 stepDiv.innerHTML = `
+                    <!-- Вертикальна лінія від цієї точки вниз -->
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-3 ${lineStyle} z-0"></div>
+
                     <!-- Точка-маркер на лінії -->
                     <div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-brandDark border-2 border-brandOrange flex items-center justify-center z-10 group-hover:scale-125 transition-transform duration-300">
                         <div class="w-2 h-2 rounded-full bg-brandOrange"></div>
@@ -215,7 +229,7 @@
 
                     <!-- Контентна картка -->
                     <div class="ml-12 md:ml-0 md:w-1/2 ${isEven ? 'md:pl-12' : 'md:pr-12'} w-full">
-                        <div class="bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl">
+                        <div class="bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl relative z-10">
                             <div class="flex items-center justify-between mb-4">
                                 <span class="text-brandOrange font-black text-2xl tracking-wider">${num}</span>
                             </div>
