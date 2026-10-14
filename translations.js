@@ -38,7 +38,7 @@ const translations = {
     "team_2_title": "Анастасія Хлібник",
     "team_2_desc": "Надзвичайна фотографка та журналістка. Людина, яка фіксує всі емоції: відповідає за фотографії, тексти, візуал, соцмережі та всі інші перемовини :)",
     "team_3_title": "Ілля Терещенко",
-    "team_3_desc": "Професійний інструктор з дружньої мотошколи. Гуру, що розповість і як їхати в коліно і чому потрібно гріти гуму.",
+    "team_3_desc": "Професійний інструктор з дружньої мотошколи \"Lemberg Moto\". Гуру, що розповість і як їхати в коліно і чому потрібно гріти гуму.",
 
     "footer_brand1": "ПЕРША",
     "footer_brand2": "ВНИЗ",
@@ -87,7 +87,7 @@ const translations = {
     "team_2_title": "Anastasiia Khlibnyk",
     "team_2_desc": "Extraordinary photographer and journalist. The person who captures every emotion: in charge of photography, copy, visuals, social media, and all negotiations :)",
     "team_3_title": "Illia Tereshchenko",
-    "team_3_desc": "Professional instructor from a partner moto school. A guru who will teach you how to drag a knee and explain why warming up tires matters.",
+    "team_3_desc": "Professional instructor from a partner moto school \"Lemberg Moto\". A guru who will teach you how to drag a knee and explain why warming up tires matters.",
 
     "footer_brand1": "FIRST",
     "footer_brand2": "DOWN",
