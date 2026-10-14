@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Перша вниз | First Down</title>
+    <title>Перша вниз | Соціальний мотопроєкт для ветеранів з ампутаціями</title>
+    <meta name="description" content="Надаємо безпечний простір на закритому треку, адаптовані мотоцикли, кваліфікованих інструкторів та підтримку ком'юніті для ветеранів з ампутаціями.">
+    <meta name="keywords" content="Перша вниз, First Down, адаптовані мотоцикли, ветерани, реабілітація, ампутація, мотоцикл для ветеранів, Мотодопомога">
+    <meta name="author" content="Проєкт 'Перша вниз'">
+
+    <!-- Open Graph / Facebook / Telegram / Viber -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://firstdown.org.ua/">
+    <meta property="og:title" content="Перша вниз | Мотопроєкт для ветеранів з ампутаціями">
+    <meta property="og:description" content="Безпечний простір на треку, адаптовані мотоцикли та кваліфіковані інструктори для ветеранів, які мріють їздити на мотоциклі.">
+    <meta property="og:image" content="https://firstdown.org.ua/logo.png">
+    <meta property="og:site_name" content="Перша вниз">
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://firstdown.org.ua/">
+    <meta name="twitter:title" content="Перша вниз | Мотопроєкт для ветеранів з ампутаціями">
+    <meta name="twitter:description" content="Безпечний простір на треку, адаптовані мотоцикли та кваліфіковані інструктори для ветеранів з ампутаціями.">
+    <meta name="twitter:image" content="https://firstdown.org.ua/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,11 +62,11 @@
 <body class="text-white font-sans antialiased">
 
     <!-- Навігація -->
-    <nav class="border-b border-brandOrange/30 bg-brandDark">
+    <nav class="border-b border-brandOrange/30 bg-brandDark sticky top-0 z-40 backdrop-blur-md bg-opacity-90">
         <div class="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-12">
-                <a href="#" class="flex-shrink-0 flex items-center gap-3">
-                    <img src="logo.png" alt="Перша вниз Лого" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <a href="#" class="flex-shrink-0 flex items-center gap-3" aria-label="Перша вниз - На головну">
+                    <img src="logo.png" alt="Логотип Перша вниз" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <span class="hidden text-brandOrange font-bold tracking-widest text-lg" data-i18n="nav_brand">FIRST DOWN</span>
                 </a>
 
@@ -54,12 +78,12 @@
                 </div>
             </div>
             <div class="flex items-center gap-8">
-                <div class="text-sm font-bold tracking-widest">
-                    <button id="btn-ua" class="lang-active" onclick="switchLang('ua')">UA</button>
-                    <span class="text-neutral-600 mx-1">/</span>
-                    <button id="btn-en" class="lang-inactive" onclick="switchLang('en')">EN</button>
+                <div class="text-sm font-bold tracking-widest" aria-label="Вибір мови">
+                    <button id="btn-ua" class="lang-active" onclick="switchLang('ua')" aria-label="Переключити на українську мову">UA</button>
+                    <span class="text-neutral-600 mx-1" aria-hidden="true">/</span>
+                    <button id="btn-en" class="lang-inactive" onclick="switchLang('en')" aria-label="Switch to English language">EN</button>
                 </div>
-                <a href="#apply" class="hidden sm:block bg-brandOrange hover:bg-[#bd4517] transition-colors text-white font-bold text-sm tracking-wider py-8 px-8 uppercase" data-i18n="nav_btn">
+                <a href="#apply" class="hidden sm:block bg-brandOrange hover:bg-[#bd4517] transition-colors text-white font-bold text-sm tracking-wider py-4 px-6 uppercase rounded-sm" data-i18n="nav_btn">
                     ПОДАТИ ЗАЯВКУ
                 </a>
             </div>
@@ -85,12 +109,10 @@
         </div>
     </section>
 
-<!-- Секція НАШ ШЛЯХ (Вертикальний роадмап) -->
     <!-- Секція НАШ ШЛЯХ (Вертикальний роадмап) -->
     <section id="path" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 bg-[#151515]">
         <h2 class="text-3xl sm:text-4xl font-bold tracking-widest mb-16 border-b border-neutral-800 pb-6 uppercase text-white" data-i18n="path_title">НАШ ШЛЯХ</h2>
         
-        <!-- Контейнер таймлайну -->
         <div class="relative max-w-5xl mx-auto pb-16">
             <div id="path-container" class="space-y-12 relative">
                 <!-- Динамічно згенерується через JS -->
@@ -98,21 +120,59 @@
         </div>
     </section>
 
-    <!-- Секція галереї -->
-    <section id="gallery" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
-        <div class="mb-12">
-            <h2 class="text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tight uppercase mb-4">
-                <span class="text-white" data-i18n="gallery_part1">НАШІ</span> <span class="text-brandOrange" data-i18n="gallery_part2">МОМЕНТИ</span>
-            </h2>
-            <p class="text-textGray font-medium tracking-widest uppercase text-lg" data-i18n="gallery_subtitle">РЕАЛЬНІ ІСТОРІЇ. РЕАЛЬНІ ЛЮДИ.</p>
+    <!-- Секція галереї з фокусним слайдером -->
+    <section id="gallery" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 relative">
+        <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <h2 class="text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tight uppercase mb-4">
+                    <span class="text-white" data-i18n="gallery_part1">НАШІ</span> <span class="text-brandOrange" data-i18n="gallery_part2">МОМЕНТИ</span>
+                </h2>
+                <p class="text-textGray font-medium tracking-widest uppercase text-lg" data-i18n="gallery_subtitle">РЕАЛЬНІ ІСТОРІЇ. РЕАЛЬНІ ЛЮДИ.</p>
+            </div>
+            
+            <!-- Кнопки навігації -->
+            <div class="flex items-center gap-4">
+                <button id="slider-prev" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors" aria-label="Попереднє фото">
+                    &#10094;
+                </button>
+                <button id="slider-next" class="w-12 h-12 border border-neutral-700 flex items-center justify-center text-white hover:border-brandOrange hover:text-brandOrange transition-colors" aria-label="Наступне фото">
+                    &#10095;
+                </button>
+            </div>
         </div>
         
-        <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Динамічні фото або заглушки -->
+        <!-- Контейнер слайдера -->
+        <div id="gallery-viewport" class="overflow-hidden py-8 px-4 -mx-4 cursor-grab active:cursor-grabbing select-none">
+            <div id="gallery-track" class="flex transition-transform duration-500 ease-out gap-6 items-center">
+                <!-- Динамічно завантажаться фото з gallery/slideshow/ -->
+            </div>
         </div>
     </section>
 
-    <!-- Секція КОМАНДА -->
+    <!-- Повноекранний Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex-col items-center justify-between p-4 md:p-8 select-none" role="dialog" aria-modal="true" aria-label="Перегляд зображення у повному розмірі">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl hover:text-brandOrange transition-colors z-50 p-2" aria-label="Закрити модальне вікно">
+            &times;
+        </button>
+
+        <div class="relative w-full h-full flex items-center justify-center my-auto">
+            <button id="lightbox-prev" class="absolute left-2 md:left-6 text-white/70 hover:text-brandOrange text-4xl p-4 transition-colors z-50" aria-label="Попереднє фото">
+                &#10094;
+            </button>
+
+            <img id="lightbox-img" src="" alt="Момент проєкту Перша вниз" class="max-h-[85vh] max-w-[90vw] object-contain shadow-2xl transition-all duration-300">
+
+            <button id="lightbox-next" class="absolute right-2 md:right-6 text-white/70 hover:text-brandOrange text-4xl p-4 transition-colors z-50" aria-label="Наступне фото">
+                &#10095;
+            </button>
+        </div>
+
+        <div id="lightbox-counter" class="text-textGray font-mono text-sm tracking-widest pb-2">
+            1 / 10
+        </div>
+    </div>
+
+    <!-- Секція КОМАНДА (Із зумуванням та відцентруванням облич) -->
     <section id="team" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
         <div class="flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-800 pb-6 mb-12">
             <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight" data-i18n="team_title">КОМАНДА</h2>
@@ -120,28 +180,76 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-[#151515] p-8 border border-neutral-800/50">
-                <div class="text-brandOrange mb-6">
-                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6h-3V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-9-2h4v2h-4V4zm6 11h-3v3h-2v-3H8v-2h3v-3h2v3h3v2z"/></svg>
+            <!-- Учасник 1: Сергій -->
+            <div class="relative min-h-[420px] p-8 border border-neutral-800/80 rounded-sm overflow-hidden group flex flex-col justify-between transition-all duration-500 hover:border-brandOrange/80">
+                <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
+                     style="background-image: url('gallery/team/serhii.jpg'), url('https://placehold.co/600x800/151515/525252?text=SERHII');">
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_1_title">Сергій Катрич</h3>
-                <p class="text-textGray leading-relaxed" data-i18n="team_1_desc"></p>
+                <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+
+                <div class="relative z-10 flex justify-between items-start mb-12">
+                    <button onclick="openTeamPhoto('gallery/team/serhii.jpg', 'Сергій Катрич')" class="w-20 h-20 rounded-full border-2 border-brandOrange overflow-hidden shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none" title="Переглянути фото">
+                        <img src="gallery/team/serhii.jpg" 
+                             onerror="this.src='https://placehold.co/200x200/151515/d9531e?text=SK';" 
+                             class="w-full h-full object-cover origin-center" 
+                             style="transform: scale(4.5) translate(-7.5%, 16%);" 
+                             alt="Сергій Катрич">
+                    </button>
+                    <span class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full">FOUNDER</span>
+                </div>
+
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="team_1_title">Сергій Катрич</h3>
+                    <p class="text-gray-300 leading-relaxed text-sm font-medium" data-i18n="team_1_desc"></p>
+                </div>
             </div>
-            
-            <div class="bg-[#151515] p-8 border border-neutral-800/50">
-                <div class="text-brandOrange mb-6">
-                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h3l2-2h6l2 2h3c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm8 3c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+
+            <!-- Учасник 2: Анастасія -->
+            <div class="relative min-h-[420px] p-8 border border-neutral-800/80 rounded-sm overflow-hidden group flex flex-col justify-between transition-all duration-500 hover:border-brandOrange/80">
+                <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
+                     style="background-image: url('gallery/team/anastasiia.jpg'), url('https://placehold.co/600x800/151515/525252?text=ANASTASIIA');">
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_2_title">Анастасія Хлібник</h3>
-                <p class="text-textGray leading-relaxed" data-i18n="team_2_desc"></p>
+                <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+
+                <div class="relative z-10 flex justify-between items-start mb-12">
+                    <button onclick="openTeamPhoto('gallery/team/anastasiia.jpg', 'Анастасія Хлібник')" class="w-20 h-20 rounded-full border-2 border-brandOrange overflow-hidden shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none" title="Переглянути фото">
+                        <img src="gallery/team/anastasiia.jpg" 
+                             onerror="this.src='https://placehold.co/200x200/151515/d9531e?text=AK';" 
+                             class="w-full h-full object-cover origin-center" 
+                             style="transform: scale(1.5) translate(-7.5%, 16%);" 
+                             alt="Анастасія Хлібник">
+                    </button>
+                    <span class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full">MEDIA</span>
+                </div>
+
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="team_2_title">Анастасія Хлібник</h3>
+                    <p class="text-gray-300 leading-relaxed text-sm font-medium" data-i18n="team_2_desc"></p>
+                </div>
             </div>
-            
-            <div class="bg-[#151515] p-8 border border-neutral-800/50">
-                <div class="text-brandOrange mb-6">
-                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M19.44 9.03L15.41 5H11v2h3.59l2.2 2.2-7.22 3.32c-.85-.68-1.92-1.1-3.07-1.1-2.76 0-5 2.24-5 5s2.24 5 5 5 2.45-.88 3.51-2.31l7.85-3.62c.38.6.98 1.05 1.68 1.25V19h2v-2.88c1.39-.52 2.38-1.85 2.38-3.41 0-1.57-1.01-2.91-2.43-3.41l-2.05-4.27zM6.5 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm13-4c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg>
+
+            <!-- Учасник 3: Ілля -->
+            <div class="relative min-h-[420px] p-8 border border-neutral-800/80 rounded-sm overflow-hidden group flex flex-col justify-between transition-all duration-500 hover:border-brandOrange/80">
+                <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
+                     style="background-image: url('gallery/team/illia.jpg'), url('https://placehold.co/600x800/151515/525252?text=ILLIA');">
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_3_title">Ілля Терещенко</h3>
-                <p class="text-textGray leading-relaxed" data-i18n="team_3_desc"></p>
+                <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+
+                <div class="relative z-10 flex justify-between items-start mb-12">
+                    <button onclick="openTeamPhoto('gallery/team/illia.jpg', 'Ілля Терещенко')" class="w-20 h-20 rounded-full border-2 border-brandOrange overflow-hidden shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none" title="Переглянути фото">
+                        <img src="gallery/team/illia.jpg" 
+                             onerror="this.src='https://placehold.co/200x200/151515/d9531e?text=IT';" 
+                             class="w-full h-full object-cover origin-center" 
+                             style="transform: scale(2.6) translate(-30.5%, 20%);" 
+                             alt="Ілля Терещенко">
+                    </button>
+                    <span class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full">INSTRUCTOR</span>
+                </div>
+
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors" data-i18n="team_3_title">Ілля Терещенко</h3>
+                    <p class="text-gray-300 leading-relaxed text-sm font-medium" data-i18n="team_3_desc"></p>
+                </div>
             </div>
         </div>
     </section>
@@ -158,14 +266,14 @@
                     <h2 class="text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tight uppercase mb-6">
                         <span class="text-white" data-i18n="footer_brand1">ПЕРША</span> <span class="text-brandOrange" data-i18n="footer_brand2">ВНИЗ</span>
                     </h2>
-                    <a href="https://www.instagram.com/first.down.ua" target="_blank" class="flex items-center gap-3 text-white hover:text-brandOrange transition-colors">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white hover:text-brandOrange transition-colors" aria-label="Наш Instagram">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         <span class="font-bold tracking-widest text-lg" data-i18n="footer_insta">ПІДПИСАТИСЯ</span>
                     </a>
                 </div>
                 <div class="text-left lg:text-right w-full lg:w-auto">
                     <p class="text-gray-400 font-bold tracking-widest text-sm mb-4 uppercase" data-i18n="footer_ready">ГОТОВИЙ СПРОБУВАТИ ТЕ, ПРО ЩО ТАК ДАВНО МРІЯВ?</p>
-                    <a href="https://forms.gle/FrHSkw1UC42Y5h1u7" target="_blank" class="inline-block bg-brandOrange hover:bg-[#bd4517] text-white font-bold py-6 px-12 uppercase tracking-wider text-xl w-full lg:w-auto text-center transition-colors" data-i18n="footer_btn">
+                    <a href="https://forms.google.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-brandOrange hover:bg-[#bd4517] text-white font-bold py-6 px-12 uppercase tracking-wider text-xl w-full lg:w-auto text-center transition-colors rounded-sm shadow-lg" data-i18n="footer_btn">
                         ЗАПОВНИТИ АНКЕТУ
                     </a>
                 </div>
@@ -182,8 +290,7 @@
     <script>
         let currentLang = localStorage.getItem('firstDownLang') || 'ua';
 
-        // Автоматичне побудування кроків шляху з translations.js
-        // Динамічна генерація роадмапу із пунктиром в кінці
+        // 1. ДИНАМІЧНИЙ РОАДМАП З ПУНКТИРОМ В КІНЦІ
         function renderPathSteps() {
             const container = document.getElementById('path-container');
             if (!container || typeof translations === 'undefined') return;
@@ -191,7 +298,6 @@
             container.innerHTML = '';
             const dict = translations[currentLang] || {};
 
-            // Спочатку підраховуємо загальну кількість кроків
             let totalSteps = 0;
             while (true) {
                 const num = (totalSteps + 1) < 10 ? `0${totalSteps + 1}` : `${totalSteps + 1}`;
@@ -211,23 +317,17 @@
                 const stepDiv = document.createElement('div');
                 stepDiv.className = `relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''} group`;
 
-                // Лінія вниз від цієї точки:
-                // Якщо це НЕ останній крок — суцільна лінія
-                // Якщо це ОСТАННІЙ крок — пунктирна лінія, що вказує на майбутнє
                 const lineStyle = isLast 
                     ? 'border-l-2 border-dashed border-brandOrange/60 h-24' 
                     : 'bg-brandOrange/40 h-[calc(100%+3rem)] w-0.5';
 
                 stepDiv.innerHTML = `
-                    <!-- Вертикальна лінія від цієї точки вниз -->
                     <div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-3 ${lineStyle} z-0"></div>
 
-                    <!-- Точка-маркер на лінії -->
                     <div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-brandDark border-2 border-brandOrange flex items-center justify-center z-10 group-hover:scale-125 transition-transform duration-300">
                         <div class="w-2 h-2 rounded-full bg-brandOrange"></div>
                     </div>
 
-                    <!-- Контентна картка -->
                     <div class="ml-12 md:ml-0 md:w-1/2 ${isEven ? 'md:pl-12' : 'md:pr-12'} w-full">
                         <div class="bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl relative z-10">
                             <div class="flex items-center justify-between mb-4">
@@ -243,12 +343,12 @@
                 i++;
             }
         }
-        
+
+        // 2. ПЕРЕМИКАННЯ МОВИ
         function switchLang(lang) {
             currentLang = lang;
             localStorage.setItem('firstDownLang', lang);
 
-            // Переганяємо генерацію шляху для нової мови
             renderPathSteps();
             
             document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -274,44 +374,235 @@
             switchLang(currentLang);
         }
 
-        const galleryContainer = document.getElementById('gallery-container');
-        let imageIndex = 1;
-        const maxPlaceholders = 3;
+        // 3. ГАЛЕРЕЯ ТА СЛАЙДЕР
+        const galleryTrack = document.getElementById('gallery-track');
+        const galleryViewport = document.getElementById('gallery-viewport');
+        const prevBtn = document.getElementById('slider-prev');
+        const nextBtn = document.getElementById('slider-next');
 
-        function addPhotoToGallery(source) {
-            const div = document.createElement('div');
-            div.className = 'aspect-w-1 aspect-h-1 overflow-hidden bg-[#151515] border border-neutral-800 group';
-            
-            const imageElement = document.createElement('img');
-            imageElement.src = source;
-            imageElement.className = 'object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500';
-            
-            div.appendChild(imageElement);
-            galleryContainer.appendChild(div);
-        }
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const lightboxCounter = document.getElementById('lightbox-counter');
 
-        function loadNextImage() {
+        let loadedImages = [];
+        let activeIndex = 0;
+        let autoplayTimer = null;
+        let isTeamPhotoActive = false; // Прапорець перегляду фото команди
+
+        function loadGalleryImages(index = 1) {
             const img = new Image();
-            const imgPath = `gallery/${imageIndex}.jpg`;
+            const src = `gallery/slideshow/${index}.jpg`;
+            img.src = src;
 
             img.onload = function() {
-                addPhotoToGallery(img.src);
-                imageIndex++;
-                loadNextImage();
+                loadedImages.push(src);
+                renderSlide(src, loadedImages.length - 1);
+                loadGalleryImages(index + 1);
             };
 
             img.onerror = function() {
-                if (imageIndex === 1) {
-                    for (let i = 1; i <= maxPlaceholders; i++) {
-                        addPhotoToGallery(`https://placehold.co/600x600/151515/525252?text=FOTO+${i}`);
+                if (loadedImages.length === 0) {
+                    for (let i = 1; i <= 6; i++) {
+                        const placeholder = `https://placehold.co/800x600/151515/525252?text=FOTO+${i}`;
+                        loadedImages.push(placeholder);
+                        renderSlide(placeholder, i - 1);
                     }
                 }
-            }; 
-            
-            img.src = imgPath;
+                initSlider();
+            };
         }
 
-        loadNextImage();
+        function renderSlide(src, idx) {
+            const slide = document.createElement('div');
+            slide.className = 'slide-item flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] bg-[#151515] border border-neutral-800 overflow-hidden cursor-pointer transition-all duration-500 transform';
+            
+            slide.innerHTML = `
+                <img src="${src}" loading="lazy" class="slide-img w-full h-full object-cover transition-all duration-500 pointer-events-none" alt="Момент проєкту Перша вниз #${idx + 1}">
+            `;
+
+            slide.addEventListener('click', () => openLightbox(idx));
+            galleryTrack.appendChild(slide);
+        }
+
+        function getVisibleSlidesCount() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 640) return 2;
+            return 1;
+        }
+
+        function updateSliderUI() {
+            if (loadedImages.length === 0) return;
+
+            const visibleCount = getVisibleSlidesCount();
+            const pageIndex = Math.floor(activeIndex / visibleCount);
+            
+            const slideWidth = galleryTrack.children[0] ? galleryTrack.children[0].offsetWidth + 24 : 0;
+            const trackOffset = pageIndex * visibleCount * slideWidth;
+            
+            galleryTrack.style.transform = `translateX(-${trackOffset}px)`;
+
+            const slides = galleryTrack.children;
+            for (let i = 0; i < slides.length; i++) {
+                const img = slides[i].querySelector('.slide-img');
+                
+                if (i === activeIndex) {
+                    slides[i].classList.add('border-brandOrange', 'scale-105', 'z-20', 'shadow-[0_0_25px_rgba(217,83,30,0.4)]');
+                    slides[i].classList.remove('border-neutral-800', 'opacity-60');
+                    if (img) img.classList.remove('grayscale');
+                } else {
+                    slides[i].classList.remove('border-brandOrange', 'scale-105', 'z-20', 'shadow-[0_0_25px_rgba(217,83,30,0.4)]');
+                    slides[i].classList.add('border-neutral-800', 'opacity-60');
+                    if (img) img.classList.add('grayscale');
+                }
+            }
+        }
+
+        function nextSlide() {
+            if (loadedImages.length === 0) return;
+            activeIndex = (activeIndex + 1) % loadedImages.length;
+            updateSliderUI();
+        }
+
+        function prevSlide() {
+            if (loadedImages.length === 0) return;
+            activeIndex = (activeIndex - 1 + loadedImages.length) % loadedImages.length;
+            updateSliderUI();
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayTimer = setInterval(nextSlide, 3000);
+        }
+
+        function stopAutoplay() {
+            if (autoplayTimer) clearInterval(autoplayTimer);
+        }
+
+        function initSlider() {
+            updateSliderUI();
+            startAutoplay();
+
+            window.addEventListener('resize', updateSliderUI);
+            galleryViewport.addEventListener('mouseenter', stopAutoplay);
+            galleryViewport.addEventListener('mouseleave', startAutoplay);
+
+            nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+            prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+
+            initTouchSwipe(galleryViewport, prevSlide, nextSlide);
+        }
+
+        // LIGHTBOX
+        function openLightbox(idx) {
+            isTeamPhotoActive = false;
+            activeIndex = idx;
+            lightboxPrev.style.display = 'block';
+            lightboxNext.style.display = 'block';
+            updateSliderUI();
+            updateLightbox();
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            stopAutoplay();
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Відкриття фото конкретного члена команди
+        function openTeamPhoto(imageSrc, name) {
+            isTeamPhotoActive = true;
+            lightboxImg.src = imageSrc;
+            lightboxCounter.textContent = name;
+            // Сховуємо стрілочки навігації для одиночного фото команди
+            lightboxPrev.style.display = 'none';
+            lightboxNext.style.display = 'none';
+            
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            stopAutoplay();
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            updateSliderUI();
+            startAutoplay();
+            document.body.style.overflow = '';
+        }
+
+        function updateLightbox() {
+            if (isTeamPhotoActive) return;
+            lightboxImg.src = loadedImages[activeIndex];
+            lightboxCounter.textContent = `${activeIndex + 1} / ${loadedImages.length}`;
+            updateSliderUI();
+        }
+
+        function lightboxNextSlide() {
+            if (isTeamPhotoActive) return;
+            activeIndex = (activeIndex + 1) % loadedImages.length;
+            updateLightbox();
+        }
+
+        function lightboxPrevSlide() {
+            if (isTeamPhotoActive) return;
+            activeIndex = (activeIndex - 1 + loadedImages.length) % loadedImages.length;
+            updateLightbox();
+        }
+
+        lightbox.addEventListener('click', () => {
+            closeLightbox();
+        });
+
+        lightboxClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLightbox();
+        });
+
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightboxNextSlide();
+        });
+
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightboxPrevSlide();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') lightboxNextSlide();
+            if (e.key === 'ArrowLeft') lightboxPrevSlide();
+        });
+
+        initTouchSwipe(lightbox, lightboxPrevSlide, lightboxNextSlide);
+
+        function initTouchSwipe(element, onSwipeRight, onSwipeLeft) {
+            let startX = 0;
+            let startY = 0;
+
+            element.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            }, { passive: true });
+
+            element.addEventListener('touchend', (e) => {
+                const diffX = e.changedTouches[0].clientX - startX;
+                const diffY = e.changedTouches[0].clientY - startY;
+
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+                    if (diffX < 0) {
+                        onSwipeLeft();
+                    } else {
+                        onSwipeRight();
+                    }
+                }
+            }, { passive: true });
+        }
+
+        loadGalleryImages();
     </script>
 </body>
 </html>
