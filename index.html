@@ -48,7 +48,8 @@
 
                 <div class="hidden md:flex gap-8 text-sm font-semibold tracking-wider uppercase text-gray-300">
                     <a href="#about" class="hover:text-brandOrange transition-colors" data-i18n="nav_about">ПРО ПРОЄКТ</a>
-                    <a href="#gallery" class="hover:text-brandOrange transition-colors" data-i18n="nav_path">НАШ ШЛЯХ</a>
+                    <a href="#path" class="hover:text-brandOrange transition-colors" data-i18n="nav_path">НАШ ШЛЯХ</a>
+                    <a href="#gallery" class="hover:text-brandOrange transition-colors" data-i18n="gallery_part2">ГАЛЕРЕЯ</a>
                     <a href="#team" class="hover:text-brandOrange transition-colors" data-i18n="nav_team">КОМАНДА</a>
                 </div>
             </div>
@@ -65,49 +66,32 @@
         </div>
     </nav>
 
-    <!-- Головна секція -->
-    <section id="about" class="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 min-h-[80vh] border-b border-neutral-800">
-        <div class="lg:col-span-7 p-8 lg:p-16 xl:p-24">
+    <!-- Головна секція (Місія) -->
+    <section id="about" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
+        <div class="max-w-4xl">
             <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tight mb-12 uppercase">
                 <span class="block text-white" data-i18n="mission_part1">МІСІЯ</span>
                 <span class="block text-brandOrange" data-i18n="mission_part2">ПРОЄКТУ</span>
             </h1>
-            <div class="space-y-6 text-gray-300 text-lg sm:text-xl leading-relaxed max-w-2xl font-medium">
-                <p data-i18n="mission_p1">Наш проєкт створений спеціально для людей з ампутаціями, які <strong>ніколи раніше не їздили на мотоциклі</strong>, але відчувають, що це їхня мрія.</p>
-                <p data-i18n="mission_p2">Сьогодні в Україні відсутня законодавча база для отримання прав категорії 'А' людьми, що втратили кінцівки.</p>
+            <div class="space-y-6 text-gray-300 text-lg sm:text-xl leading-relaxed font-medium mb-12">
+                <p data-i18n="mission_p1">Наш проєкт створений для ветеранів з ампутаціями, які <strong>ніколи раніше не їздили на мотоциклі</strong>, але мали таку мрію.</p>
+                <p data-i18n="mission_p2">Може здатись, що поранення назавжди закрило ці двері, але це не так!</p>
             </div>
-            <div class="mt-12 border-l-4 border-brandOrange pl-6 py-2 max-w-2xl">
+            <div class="border-l-4 border-brandOrange pl-6 py-2">
                 <p class="text-brandOrange font-medium text-lg sm:text-xl uppercase tracking-wide leading-relaxed" data-i18n="mission_quote">
-                    МИ ЗМІНЮЄМО ПРАВИЛА ГРИ. НАДАЄМО БЕЗПЕЧНИЙ ПРОСТІР НА ЗАКРИТОМУ ТРЕКУ, УНІВЕРСАЛЬНО АДАПТОВАНІ МОТОЦИКЛИ ТА ПІДТРИМКУ КОМ'ЮНІТІ.
+                    МИ НАДАЄМО БЕЗПЕЧНИЙ ПРОСТІР НА ЗАКРИТОМУ ТРЕКУ, АДАПТОВАНІ МОТОЦИКЛИ, КВАЛІФІКОВАНИХ ІНСТРУКТОРІВ ТА ПІДТРИМКУ КОМ'ЮНІТІ.
                 </p>
             </div>
         </div>
+    </section>
 
-        <div class="lg:col-span-5 bg-[#151515] p-8 lg:p-16 xl:p-24 border-l border-neutral-800">
-            <h2 class="text-2xl lg:text-3xl font-medium tracking-widest mb-12 border-b border-neutral-800 pb-6 uppercase text-white" data-i18n="path_title">НАШ ШЛЯХ</h2>
-            <div class="space-y-12">
-                <div class="flex gap-6">
-                    <span class="text-brandOrange font-bold text-3xl mt-[-4px]">01</span>
-                    <div>
-                        <h3 class="text-white font-bold tracking-wider text-lg mb-2 uppercase" data-i18n="path_01_title">ПЕРШИЙ ДОСВІД</h3>
-                        <p class="text-textGray leading-relaxed text-sm" data-i18n="path_01_desc">Фізична та психологічна реабілітація...</p>
-                    </div>
-                </div>
-                <div class="flex gap-6">
-                    <span class="text-brandOrange font-bold text-3xl mt-[-4px]">02</span>
-                    <div>
-                        <h3 class="text-white font-bold tracking-wider text-lg mb-2 uppercase" data-i18n="path_02_title">СПОРТИВНА АРЕНА</h3>
-                        <p class="text-textGray leading-relaxed text-sm" data-i18n="path_02_desc">Наш перший учасник успішно змагається...</p>
-                    </div>
-                </div>
-                <div class="flex gap-6">
-                    <span class="text-brandOrange font-bold text-3xl mt-[-4px]">03</span>
-                    <div>
-                        <h3 class="text-white font-bold tracking-wider text-lg mb-2 uppercase" data-i18n="path_03_title">ЗМІНА СИСТЕМИ</h3>
-                        <p class="text-textGray leading-relaxed text-sm" data-i18n="path_03_desc">Спираючись на наші результати...</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Секція НАШ ШЛЯХ (Динамічна генерація) -->
+    <section id="path" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 bg-[#151515]">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-widest mb-16 border-b border-neutral-800 pb-6 uppercase text-white" data-i18n="path_title">НАШ ШЛЯХ</h2>
+        
+        <!-- Контейнер для кроків шляху -->
+        <div id="path-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Динамічно згенерується через JS -->
         </div>
     </section>
 
@@ -121,7 +105,7 @@
         </div>
         
         <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Динамічний контент -->
+            <!-- Динамічні фото або заглушки -->
         </div>
     </section>
 
@@ -129,7 +113,7 @@
     <section id="team" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
         <div class="flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-800 pb-6 mb-12">
             <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight" data-i18n="team_title">КОМАНДА</h2>
-            <span class="text-brandOrange font-bold tracking-widest text-lg md:text-xl mt-4 md:mt-0 uppercase" data-i18n="team_badge">САМОФІНАНСОВАНИЙ ПРОЄКТ</span>
+            <span class="text-brandOrange font-bold tracking-widest text-lg md:text-xl mt-4 md:mt-0 uppercase" data-i18n="team_badge"></span>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -137,24 +121,24 @@
                 <div class="text-brandOrange mb-6">
                     <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6h-3V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-9-2h4v2h-4V4zm6 11h-3v3h-2v-3H8v-2h3v-3h2v3h3v2z"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_1_title">ОРГАНІЗАТОР</h3>
-                <p class="text-textGray leading-relaxed" data-i18n="team_1_desc">First responder...</p>
+                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_1_title">Сергій Катрич</h3>
+                <p class="text-textGray leading-relaxed" data-i18n="team_1_desc"></p>
             </div>
             
             <div class="bg-[#151515] p-8 border border-neutral-800/50">
                 <div class="text-brandOrange mb-6">
                     <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h3l2-2h6l2 2h3c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm8 3c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_2_title">МЕДІА</h3>
-                <p class="text-textGray leading-relaxed" data-i18n="team_2_desc">Дружина організатора...</p>
+                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_2_title">Анастасія Хлібник</h3>
+                <p class="text-textGray leading-relaxed" data-i18n="team_2_desc"></p>
             </div>
             
             <div class="bg-[#151515] p-8 border border-neutral-800/50">
                 <div class="text-brandOrange mb-6">
                     <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M19.44 9.03L15.41 5H11v2h3.59l2.2 2.2-7.22 3.32c-.85-.68-1.92-1.1-3.07-1.1-2.76 0-5 2.24-5 5s2.24 5 5 5 2.45-.88 3.51-2.31l7.85-3.62c.38.6.98 1.05 1.68 1.25V19h2v-2.88c1.39-.52 2.38-1.85 2.38-3.41 0-1.57-1.01-2.91-2.43-3.41l-2.05-4.27zM6.5 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm13-4c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_3_title">ІНСТРУКТОР</h3>
-                <p class="text-textGray leading-relaxed" data-i18n="team_3_desc">Близький друг родини...</p>
+                <h3 class="text-2xl font-bold text-white mb-4 uppercase" data-i18n="team_3_title">Ілля Терещенко</h3>
+                <p class="text-textGray leading-relaxed" data-i18n="team_3_desc"></p>
             </div>
         </div>
     </section>
@@ -177,7 +161,7 @@
                     </a>
                 </div>
                 <div class="text-left lg:text-right w-full lg:w-auto">
-                    <p class="text-gray-400 font-bold tracking-widest text-sm mb-4 uppercase" data-i18n="footer_ready">ГОТОВИЙ ПОВЕРНУТИСЯ В СІДЛО?</p>
+                    <p class="text-gray-400 font-bold tracking-widest text-sm mb-4 uppercase" data-i18n="footer_ready">ГОТОВИЙ СПРОБУВАТИ ТЕ, ПРО ЩО ТАК ДАВНО МРІЯВ?</p>
                     <a href="https://forms.google.com/" target="_blank" class="inline-block bg-brandOrange hover:bg-[#bd4517] text-white font-bold py-6 px-12 uppercase tracking-wider text-xl w-full lg:w-auto text-center transition-colors" data-i18n="footer_btn">
                         ЗАПОВНИТИ АНКЕТУ
                     </a>
@@ -186,17 +170,52 @@
 
             <div class="flex flex-col md:flex-row justify-between pt-8 border-t border-neutral-800 text-sm font-medium tracking-widest text-neutral-500 uppercase gap-4">
                 <span data-i18n="footer_copy">© 2026 ПРОЄКТ 'ПЕРША ВНИЗ'.</span>
-                <span data-i18n="footer_partners">ДЛЯ ПАРТНЕРІВ: EMAIL@FIRSTDOWN.ORG.UA</span>
+                <span data-i18n="footer_partners">ДЛЯ КОНТАКТІВ: MAIN@FIRSTDOWN.ORG.UA</span>
             </div>
         </div>
     </section>
 
+    <!-- Скрипти -->
     <script>
         let currentLang = localStorage.getItem('firstDownLang') || 'ua';
+
+        // Автоматичне побудування кроків шляху з translations.js
+        function renderPathSteps() {
+            const container = document.getElementById('path-container');
+            if (!container || typeof translations === 'undefined') return;
+
+            container.innerHTML = '';
+            const dict = translations[currentLang] || {};
+
+            // Шукаємо ключі типу path_01_title, path_02_title і т.д.
+            let i = 1;
+            while (true) {
+                const num = i < 10 ? `0${i}` : `${i}`;
+                const titleKey = `path_${num}_title`;
+                const descKey = `path_${num}_desc`;
+
+                if (!dict[titleKey]) break;
+
+                const stepDiv = document.createElement('div');
+                stepDiv.className = 'flex flex-col justify-between border-l border-neutral-800 pl-6';
+                stepDiv.innerHTML = `
+                    <div>
+                        <span class="text-brandOrange font-black text-4xl block mb-4">${num}</span>
+                        <h3 class="text-white font-bold tracking-wider text-xl mb-3 uppercase" data-i18n="${titleKey}">${dict[titleKey]}</h3>
+                        <p class="text-textGray leading-relaxed text-sm" data-i18n="${descKey}">${dict[descKey] || ''}</p>
+                    </div>
+                `;
+                container.appendChild(stepDiv);
+                i++;
+            }
+        }
         
         function switchLang(lang) {
             currentLang = lang;
             localStorage.setItem('firstDownLang', lang);
+
+            // Переганяємо генерацію шляху для нової мови
+            renderPathSteps();
             
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -217,11 +236,8 @@
             }
         }
 
-        // Перевіряємо, чи завантажився словник, перш ніж запускати переклад
         if (typeof translations !== 'undefined') {
             switchLang(currentLang);
-        } else {
-            console.error("Словник translations.js не знайдено або в ньому помилка!");
         }
 
         const galleryContainer = document.getElementById('gallery-container');
@@ -251,7 +267,6 @@
             };
 
             img.onerror = function() {
-                // Якщо реальних фото немає (або папки не існує), показуємо заглушки
                 if (imageIndex === 1) {
                     for (let i = 1; i <= maxPlaceholders; i++) {
                         addPhotoToGallery(`https://placehold.co/600x600/151515/525252?text=FOTO+${i}`);
