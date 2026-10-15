@@ -22,7 +22,7 @@ const translations = {
     // СЕКЦІЯ "ПРО ПРОЄКТ"
     "about_title_part1": "ПРО",
     "about_title_part2": "ПРОЄКТ",
-    "about_p1": "Соціальний проєкт «Перша вниз» створено за ініціативи ГО «Мотодопомога Львів». Засновником проєкту є Сергій Катрич — реагувальник та інструктор ГО «Мотодопомога Львів», парамедик та розробник ігор.",
+    "about_p1": "Соціальний проєкт «Перша вниз» створено за ініціативи ГО «Мотодопомога Львів». Засновником проєкту є Сергій Катрич — реагувальник та інструктор ГО «Мотодопомога Львів», госпітальєр та розробник ігор.",
     "about_p2": "Проєкт об'єднує досвідчених мотоінструкторів, волонтерів та партнерів навколо спільної мети — надати ветеранам з ампутаціями можливість опанувати мотоцикл у безпечному та підтримуючому середовищі.",
 
     // СЕКЦІЯ "МІСІЯ ПРОЄКТУ"
@@ -127,7 +127,7 @@ const translations = {
 
     "about_title_part1": "ABOUT",
     "about_title_part2": "PROJECT",
-    "about_p1": "The social project 'First Down' was created as an initiative of NGO 'Motodopomoga Lviv'. Founded by Serhii Katrych — first responder and instructor at NGO 'Motodopomoga Lviv', Hospitaller paramedic, and game developer.",
+    "about_p1": "The social project 'First Down' was created as an initiative of NGO 'Motodopomoga Lviv'. Founded by Serhii Katrych — first responder and instructor at NGO 'Motodopomoga Lviv', Hospitaller, and game developer.",
     "about_p2": "The project brings together experienced motorcycle instructors, volunteers, and partners around a shared goal — providing amputee veterans with the opportunity to master motorcycle riding in a safe and supportive environment.",
 
     "mission_part1": "PROJECT",
@@ -163,7 +163,7 @@ const translations = {
     "team_title": "TEAM",
     "team_1_role": "FOUNDER",
     "team_1_title": "Serhii Katrych",
-    "team_1_desc": "Founder. First responder and instructor at NGO 'Motodopomoga Lviv', Hospitaller medic, and game developer.",
+    "team_1_desc": "Founder. First responder and instructor at NGO 'Motodopomoga Lviv', Hospitaller, and game developer.",
     "team_1_insta": "@gaspod3 ↗",
 
     "team_2_role": "MEDIA",
