@@ -32,27 +32,51 @@
     <meta name="twitter:description" content="Абілітаційний мотопроєкт для ветеранів з ампутаціями від ГО Мотодопомога Львів.">
     <meta name="twitter:image" content="https://firstdown.org.ua/logo-small.png">
 
-    <!-- Мікророзмітка Schema.org (JSON-LD) для Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "NGO",
-      "name": "Перша вниз",
-      "alternateName": ["First Down", "ГО Мотодопомога Львів"],
-      "url": "https://firstdown.org.ua/",
-      "logo": "https://firstdown.org.ua/logo-small.png",
-      "description": "Абілітаційний мотопроєкт для ветеранів з ампутаціями ГО Мотодопомога Львів.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Львів",
-        "addressCountry": "UA"
+    <!-- Мікророзмітка Schema.org (Organization + FAQPage) -->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Перша вниз",
+    "alternateName": ["First Down", "ГО Мотодопомога Львів"],
+    "url": "https://firstdown.org.ua/",
+    "logo": "https://firstdown.org.ua/logo-small.png",
+    "description": "Абілітаційний мотопроєкт для ветеранів з ампутаціями від ГО Мотодопомога Львів.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Львів",
+      "addressCountry": "UA"
+    },
+    "sameAs": [
+      "https://www.instagram.com/first.down.ua",
+      "https://facebook.com/motodopomoga"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Для кого цей проєкт?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Проєкт створений для ветеранів та ветеранок з ампутаціями кінцівок, які прагнуть пройти абілітацію через опанування адаптованого мотоцикла."
+        }
       },
-      "sameAs": [
-        "https://www.instagram.com/first.down.ua",
-        "https://facebook.com/motodopomoga"
-      ]
-    }
-    </script>
+      {
+        "@type": "Question",
+        "name": "Чи це безпечно?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Начання проходить на закритому треку під наглядом досвідчених інструкторів з використанням повного комплекту захисного екіпірування."
+        }
+      }
+    ]
+  }
+]
+</script>
 
     <!-- Підключення стилів та шрифтів -->
     <script src="https://cdn.tailwindcss.com"></script>
