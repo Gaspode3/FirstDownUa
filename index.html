@@ -9,16 +9,23 @@
         content="Абілітаційний мотопроєкт для ветеранів з ампутаціями ГО Мотодопомога Львів. Безпечний простір на треку, адаптовані мотоцикли та підтримка спільноти.">
     <meta name="keywords"
         content="Перша вниз, First Down, Мотодопомога Львів, Motodopomoga Lviv, Lemberg Moto, Zgraya, адаптовані мотоцикли, ветерани, реабілітація, ампутація">
-    <meta name="author" content="Проєкт 'Перша вниз' & ГО "Мотодопомога Львів"">
+    <meta name="author" content="Проєкт 'Перша вниз' & ГО 'Мотодопомога Львів'">
 
-    <!-- Іконка для вкладки браузера (у структурі файлів поруч із index.html) -->
-    <link rel="icon" type="image/png" href="logo-small.png">
+    <!-- Favicon для вкладки браузера -->
+    <link rel="icon" type="image/png" href="https://firstdown.org.ua/logo-small.png">
 
-    <!-- Метатеги для прев'ю у месенджерах -->
+    <!-- Open Graph (для Telegram, Viber, Facebook, WhatsApp) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Перша вниз | Абілітаційний мотопроєкт">
-    <meta property="og:description" content="Абілітаційний мотопроєкт для ветеранів з ампутаціями ГО Мотодопомога Львів.">
-    <meta property="og:image" content="logo-small.png">
+    <meta property="og:url" content="https://firstdown.org.ua/">
+    <meta property="og:title" content="Перша вниз | Абілітаційний мотопроєкт ГО &quot;Мотодопомога Львів&quot;">
+    <meta property="og:description" content="Абілітаційний мотопроєкт для ветеранів з ампутаціями ГО Мотодопомога Львів. Безпечний простір на треку, адаптовані мотоцикли та підтримка спільноти.">
+    <meta property="og:image" content="https://firstdown.org.ua/logo-small.png">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Перша вниз | Абілітаційний мотопроєкт ГО &quot;Мотодопомога Львів&quot;">
+    <meta name="twitter:description" content="Абілітаційний мотопроєкт для ветеранів з ампутаціями ГО Мотодопомога Львів.">
+    <meta name="twitter:image" content="https://firstdown.org.ua/logo-small.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,34 +53,17 @@
         }
     </script>
     <style>
-        .lang-active {
-            color: #d9531e;
-        }
-
-        .lang-inactive {
-            color: #525252;
-            transition: color 0.3s;
-        }
-
-        .lang-inactive:hover {
-            color: #a3a3a3;
-        }
-
-        body {
-            background-color: #0f0f0f;
-        }
-
-        .blend-logo {
-            mix-blend-mode: screen;
-        }
-
+        .lang-active { color: #d9531e; }
+        .lang-inactive { color: #525252; transition: color 0.3s; }
+        .lang-inactive:hover { color: #a3a3a3; }
+        body { background-color: #0f0f0f; }
+        .blend-logo { mix-blend-mode: screen; }
         .motodopomoga-logo {
             mix-blend-mode: screen;
             filter: grayscale(100%) contrast(130%) brightness(1.1);
             opacity: 0.8;
             transition: all 0.3s ease;
         }
-
         .group:hover .motodopomoga-logo,
         .group:active .motodopomoga-logo,
         .motodopomoga-logo:hover,
@@ -82,24 +72,10 @@
             opacity: 1;
             transform: scale(1.05);
         }
-
-        /* Стилі для плавного FAQ */
-        .faq-answer {
-            display: none;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        .faq-item.active .faq-arrow {
-            transform: rotate(180deg);
-            color: #d9531e;
-        }
-
-        .faq-item.active .faq-btn-text {
-            color: #d9531e;
-        }
+        .faq-answer { display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); color: #d9531e; }
+        .faq-item.active .faq-btn-text { color: #d9531e; }
     </style>
 </head>
 
