@@ -15,6 +15,11 @@
 
     <!-- Канонічна URL-адреса (важливо для Google) -->
     <link rel="canonical" href="https://firstdown.org.ua/">
+<link rel="alternate" hreflang="uk" href="https://firstdown.org.ua/">
+<link rel="alternate" hreflang="en" href="https://firstdown.org.ua/en/">
+<link rel="alternate" hreflang="x-default" href="https://firstdown.org.ua/">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:locale:alternate" content="en_US">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://firstdown.org.ua/logo-small.png">
@@ -39,7 +44,10 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Перша вниз",
-    "alternateName": ["First Down", "ГО Мотодопомога Львів"],
+    "alternateName": [
+      "First Down",
+      "ГО Мотодопомога Львів"
+    ],
     "url": "https://firstdown.org.ua/",
     "logo": "https://firstdown.org.ua/logo-small.png",
     "description": "Абілітаційний мотопроєкт для ветеранів з ампутаціями від ГО Мотодопомога Львів.",
@@ -57,21 +65,38 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": "uk",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Для кого цей проєкт?",
+        "name": "Це безкоштовно для ветеранів?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Проєкт створений для ветеранів та ветеранок з ампутаціями кінцівок, які прагнуть пройти абілітацію через опанування адаптованого мотоцикла."
+          "text": "Оскільки проєкт реалізується за власний кошторис та підтримку небайдужих, ми надаємо базовий курс із 5 повністю безкоштовних занять. Усі витрати на використання адаптованих мотоциклів, паливо та захист ми беремо на себе."
         }
       },
       {
         "@type": "Question",
-        "name": "Чи це безпечно?",
+        "name": "Чи потрібні категорія «А» або досвід кермування?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Начання проходить на закритому треку під наглядом досвідчених інструкторів з використанням повного комплекту захисного екіпірування."
+          "text": "Ні! Вам не потрібно мати відкриту категорію «А» чи будь-який попередній досвід. Усі заняття проходять на закритому майданчику/треку, а наші інструктори навчають з самого нуля у безпечному темпі."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Чи забезпечуєте ви екіпіруванням?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Так, ми надаємо необхідний комплект захисту: шолом, мотокуртку та наколінники. Безпека учасників на треку — наш головний пріоритет."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Які типи поранень/ампутацій ви зараз можете прийняти?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Наразі ми повністю готові приймати учасників із травмами та ампутаціями лівої руки. Якщо у вас інша травма — обов'язково залишайте заявку! Саме ваш запит може визначити інженерні рішення та тип адаптації для нашого наступного мотоцикла."
         }
       }
     ]
@@ -156,29 +181,27 @@
 
                 <!-- Десктоп Меню -->
                 <div class="hidden lg:flex gap-8 text-sm font-semibold tracking-wider uppercase text-gray-300 ml-6">
-                    <a href="#about" class="hover:text-brandOrange transition-colors" data-i18n="nav_about"></a>
-                    <a href="#path" class="hover:text-brandOrange transition-colors" data-i18n="nav_path"></a>
-                    <a href="#gallery" class="hover:text-brandOrange transition-colors" data-i18n="nav_gallery"></a>
-                    <a href="#team" class="hover:text-brandOrange transition-colors" data-i18n="nav_team"></a>
-                    <a href="#faq" class="hover:text-brandOrange transition-colors" data-i18n="nav_faq"></a>
-                    <a href="#partners" class="hover:text-brandOrange transition-colors" data-i18n="nav_partners"></a>
+                    <a href="#about" class="hover:text-brandOrange transition-colors" data-i18n="nav_about">ПРО ПРОЄКТ</a>
+                    <a href="#path" class="hover:text-brandOrange transition-colors" data-i18n="nav_path">НАШ ШЛЯХ</a>
+                    <a href="#gallery" class="hover:text-brandOrange transition-colors" data-i18n="nav_gallery">ГАЛЕРЕЯ</a>
+                    <a href="#team" class="hover:text-brandOrange transition-colors" data-i18n="nav_team">КОМАНДА</a>
+                    <a href="#faq" class="hover:text-brandOrange transition-colors" data-i18n="nav_faq">FAQ</a>
+                    <a href="#partners" class="hover:text-brandOrange transition-colors" data-i18n="nav_partners">ПАРТНЕРИ</a>
                 </div>
             </div>
 
             <div class="flex items-center gap-6">
                 <!-- Мови -->
                 <div class="text-sm font-bold tracking-widest" aria-label="Вибір мови">
-                    <button id="btn-ua" class="lang-active" onclick="switchLang('ua')"
-                        aria-label="Переключити на українську мову">UA</button>
+                    <a id="btn-ua" href="/" hreflang="uk" lang="uk" class="lang-active" aria-label="Українська">UA</a>
                     <span class="text-neutral-600 mx-1" aria-hidden="true">/</span>
-                    <button id="btn-en" class="lang-inactive" onclick="switchLang('en')"
-                        aria-label="Switch to English language">EN</button>
+                    <a id="btn-en" href="/en/" hreflang="en" lang="en" class="lang-inactive" aria-label="Switch to English">EN</a>
                 </div>
 
                 <!-- Кнопка заявки -->
                 <a href="https://forms.gle/SpJBqmKMYH8tFTDP6" target="_blank" rel="noopener noreferrer"
                     class="hidden sm:block bg-brandOrange hover:bg-[#bd4517] transition-colors text-white font-bold text-sm tracking-wider py-3 px-6 uppercase rounded-sm"
-                    data-i18n="nav_btn"></a>
+                    data-i18n="nav_btn">ПОДАТИ ЗАЯВКУ</a>
 
                 <!-- Гамбургер кнопка для мобільних -->
                 <button id="mobile-menu-btn" onclick="toggleMobileMenu()"
@@ -195,21 +218,21 @@
         <div id="mobile-menu"
             class="hidden lg:hidden bg-brandDark border-b border-neutral-800 px-6 py-4 flex-col gap-4 text-sm font-semibold tracking-wider uppercase text-gray-300">
             <a href="#about" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1"
-                data-i18n="nav_about"></a>
+                data-i18n="nav_about">ПРО ПРОЄКТ</a>
             <a href="#path" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1"
-                data-i18n="nav_path"></a>
+                data-i18n="nav_path">НАШ ШЛЯХ</a>
             <a href="#gallery" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1"
-                data-i18n="nav_gallery"></a>
+                data-i18n="nav_gallery">ГАЛЕРЕЯ</a>
             <a href="#team" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1"
-                data-i18n="nav_team"></a>
+                data-i18n="nav_team">КОМАНДА</a>
             <a href="#faq" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1"
-                data-i18n="nav_faq"></a>
+                data-i18n="nav_faq">FAQ</a>
             <a href="#partners" onclick="toggleMobileMenu()" class="hover:text-brandOrange transition-colors py-1"
-                data-i18n="nav_partners"></a>
+                data-i18n="nav_partners">ПАРТНЕРИ</a>
             <a href="https://forms.gle/SpJBqmKMYH8tFTDP6" target="_blank" rel="noopener noreferrer"
                 onclick="toggleMobileMenu()"
                 class="inline-block sm:hidden bg-brandOrange text-white text-center font-bold text-sm py-3 px-6 uppercase rounded-sm mt-2"
-                data-i18n="nav_btn"></a>
+                data-i18n="nav_btn">ПОДАТИ ЗАЯВКУ</a>
         </div>
     </nav>
 
@@ -227,24 +250,24 @@
         <div class="relative z-10 max-w-4xl text-center space-y-8 my-auto drop-shadow-lg">
             <span
                 class="inline-block text-brandOrange text-xs sm:text-sm font-bold tracking-widest uppercase bg-brandOrange/20 border border-brandOrange/40 px-4 py-2 rounded-full backdrop-blur-sm"
-                data-i18n="hero_badge"></span>
+                data-i18n="hero_badge">АБІЛІТАЦІЙНИЙ МОТОПРОЄКТ ДЛЯ ВЕТЕРАНІВ З АМПУТАЦІЯМИ</span>
 
             <h1
                 class="text-6xl sm:text-7xl lg:text-9xl font-black uppercase tracking-tight leading-none drop-shadow-2xl">
-                <span class="text-white" data-i18n="hero_title_1"></span> <span class="text-brandOrange"
-                    data-i18n="hero_title_2"></span>
+                <span class="text-white" data-i18n="hero_title_1">ПЕРША</span> <span class="text-brandOrange"
+                    data-i18n="hero_title_2">ВНИЗ</span>
             </h1>
 
             <p class="text-gray-200 text-lg sm:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed drop-shadow-md"
-                data-i18n="hero_subtitle"></p>
+                data-i18n="hero_subtitle">Безпечний простір на закритому треку, адаптовані мотоцикли, кваліфіковані інструктори та підтримка ком'юніті.</p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
                 <a href="https://forms.gle/SpJBqmKMYH8tFTDP6" target="_blank" rel="noopener noreferrer"
                     class="w-full sm:w-auto bg-brandOrange hover:bg-[#bd4517] text-white font-bold py-5 px-10 uppercase tracking-wider text-lg transition-colors rounded-sm shadow-2xl"
-                    data-i18n="hero_btn_apply"></a>
+                    data-i18n="hero_btn_apply">ЗАПОВНИТИ АНКЕТУ</a>
                 <a href="#about"
                     class="w-full sm:w-auto border border-neutral-600 hover:border-brandOrange text-white font-bold py-5 px-10 uppercase tracking-wider text-lg transition-colors rounded-sm backdrop-blur-sm bg-black/20"
-                    data-i18n="hero_btn_about"></a>
+                    data-i18n="hero_btn_about">ДІЗНАТИСЯ БІЛЬШЕ</a>
             </div>
         </div>
     </section>
@@ -256,13 +279,12 @@
             <div>
                 <h2
                     class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight border-b border-neutral-800 pb-6 mb-8 flex flex-wrap gap-x-3">
-                    <span class="text-white" data-i18n="about_title_part1"></span>
-                    <span class="text-brandOrange" data-i18n="about_title_part2"></span>
+                    <span class="text-white" data-i18n="about_title_part1">ПРО</span>
+                    <span class="text-brandOrange" data-i18n="about_title_part2">ПРОЄКТ</span>
                 </h2>
 
                 <div class="space-y-6 text-gray-300 text-lg sm:text-xl leading-relaxed font-medium">
-                    <p data-i18n="about_p1"></p>
-                    <p data-i18n="about_p2"></p>
+                    <p data-i18n="about_p1">«Перша вниз» — це проєкт, що був створений з почуття дружби та поваги.<br><br>Якось одному з байкерів-реагувальників ГО «Мотодопомога» Сергію Катричу близький друг сказав, що його дитяча мрія про покатухи на байку, мабуть, розбилася в друзки, адже після поранення на війні (що призвело до ампутації лівої верхньої кінцівки) його вже ніхто не пустить за кермо мотоцикла. Сергій вирішив проаналізувати ситуацію і спробувати допомогти Вікінгу. І дійсно, мотошколи, до яких звертався респондер, відмовлялися братися за навчання ветерана без руки.<br><br>Отже, Сергій власним коштом купив стареньку та лагідну «Ямаху» і знайшов механіка, який погодився адаптувати техніку. І врешті-решт сам взявся за навчання друга. З часом до процесу під’єднався інструктор з мотошколи Lemberg Moto — Ілля Терещенко.<br><br>І от коли Вікінг не просто опанував навичку водіння мотоцикла, а й вийшов на змагання з мотоджимхани, прийшло розуміння, що такий проєкт варто продовжувати і розвивати.</p>
                 </div>
             </div>
 
@@ -270,18 +292,18 @@
             <div>
                 <h2
                     class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight border-b border-neutral-800 pb-6 mb-8 flex flex-wrap gap-x-3">
-                    <span class="text-white" data-i18n="mission_part1"></span>
-                    <span class="text-brandOrange" data-i18n="mission_part2"></span>
+                    <span class="text-white" data-i18n="mission_part1">МІСІЯ</span>
+                    <span class="text-brandOrange" data-i18n="mission_part2">ПРОЄКТУ</span>
                 </h2>
 
                 <div class="space-y-6 text-gray-300 text-lg sm:text-xl leading-relaxed font-medium mb-8">
-                    <p data-i18n="mission_p1"></p>
-                    <p data-i18n="mission_p2"></p>
+                    <p data-i18n="mission_p1">Першочергово цей проєкт створений для ветеранів і ветеранок, що отримали поранення внаслідок бойових дій, які раніше не сідали за кермо байка, але завжди мріяли реалізувати це. Себто ми зробимо все, аби ви спробували, і якщо вам буде цікаво, то навчилися.</p>
+                    <p data-i18n="mission_p2">Також навколо «Першої вниз» гуртуємо справді цікаву й, головне, небайдужу спільноту, що готова розвивати ветеранську «мотодвіжуху» і крок за кроком будувати систему, в якій ветеран або ветеранка навіть після поранення зможуть офіційно отримати посвідчення категорії «А».</p>
                 </div>
 
                 <div class="border-l-4 border-brandOrange pl-6 py-2">
                     <p class="text-brandOrange font-medium text-lg sm:text-xl uppercase tracking-wide leading-relaxed"
-                        data-i18n="mission_quote"></p>
+                        data-i18n="mission_quote">МИ НАДАЄМО БЕЗПЕЧНИЙ ПРОСТІР НА ЗАКРИТОМУ ТРЕКУ, АДАПТОВАНІ МОТОЦИКЛИ, КВАЛІФІКОВАНИХ ІНСТРУКТОРІВ ТА ПІДТРИМКУ КОМ'ЮНІТІ.</p>
                 </div>
             </div>
         </div>
@@ -290,9 +312,76 @@
     <!-- СЕКЦІЯ 2: НАШ ШЛЯХ -->
     <section id="path" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 bg-[#151515]">
         <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight border-b border-neutral-800 pb-6 mb-12"
-            data-i18n="path_title"></h2>
+            data-i18n="path_title">НАШ ШЛЯХ</h2>
         <div class="relative max-w-5xl mx-auto pb-16">
-            <div id="path-container" class="relative max-w-5xl mx-auto"></div>
+            <div id="path-container" class="relative max-w-5xl mx-auto">
+<div class="relative flex flex-col md:flex-row items-start  group mb-12">
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-3 bg-brandOrange/40 h-[calc(100%+3rem)] w-0.5 z-0"></div>
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-brandDark border-2 border-brandOrange flex items-center justify-center z-10 group-hover:scale-125 transition-transform duration-300"><div class="w-2 h-2 rounded-full bg-brandOrange"></div></div>
+<div class="ml-12 md:ml-0 md:w-1/2 md:pr-12 w-full">
+<div class="bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl relative z-10">
+<div class="flex items-center justify-between mb-4"><span class="text-brandOrange font-black text-2xl tracking-wider md:hidden">01</span><span class="text-[10px] font-bold tracking-widest text-brandOrange uppercase bg-brandOrange/10 border border-brandOrange/30 px-2 py-0.5 rounded">ПОЧАТОК</span></div>
+<h3 class="text-white font-bold tracking-wider text-xl mb-3 uppercase md:hidden" data-i18n="path_01_title">ПЕРШИЙ ДОСВІД</h3>
+<p class="text-textGray leading-relaxed text-sm lg:text-base font-normal" data-i18n="path_01_desc">Знайомство з нашим другом Вікінгом. Він розповів про свою давню мрію і шкодував, що не встиг спробувати кермувати мотоциклом. Ми вирішили, що це цілком реально, і почали шукати мотошколи. Проте ніхто не був готовий до такого виклику — бракувало і адаптованої техніки, і досвідчених інструкторів.</p>
+</div></div>
+<div class="hidden md:flex md:w-1/2 md:pl-12 justify-start text-left items-center self-center"><div class="space-y-1"><span class="text-brandOrange/80 font-black text-4xl lg:text-5xl tracking-tight block">01</span><h3 class="text-white font-black tracking-wider text-xl lg:text-2xl uppercase leading-snug" data-i18n="path_01_title">ПЕРШИЙ ДОСВІД</h3></div></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-start md:flex-row-reverse group mb-12">
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-3 bg-brandOrange/40 h-[calc(100%+3rem)] w-0.5 z-0"></div>
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-brandDark border-2 border-brandOrange flex items-center justify-center z-10 group-hover:scale-125 transition-transform duration-300"><div class="w-2 h-2 rounded-full bg-brandOrange"></div></div>
+<div class="ml-12 md:ml-0 md:w-1/2 md:pl-12 w-full">
+<div class="bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl relative z-10">
+<div class="flex items-center justify-between mb-4"><span class="text-brandOrange font-black text-2xl tracking-wider md:hidden">02</span><span class="text-[10px] font-bold tracking-widest text-brandOrange uppercase bg-brandOrange/10 border border-brandOrange/30 px-2 py-0.5 rounded">ТЕХНІКА</span></div>
+<h3 class="text-white font-bold tracking-wider text-xl mb-3 uppercase md:hidden" data-i18n="path_02_title">КІНЬ</h3>
+<p class="text-textGray leading-relaxed text-sm lg:text-base font-normal" data-i18n="path_02_desc">За власні кошти придбали мотоцикл у побратима та адаптували його під поранення Євгена. Паралельно знайшли тренувальний майданчик і розпочали перші заняття.</p>
+</div></div>
+<div class="hidden md:flex md:w-1/2 md:pr-12 justify-end text-right items-center self-center"><div class="space-y-1"><span class="text-brandOrange/80 font-black text-4xl lg:text-5xl tracking-tight block">02</span><h3 class="text-white font-black tracking-wider text-xl lg:text-2xl uppercase leading-snug" data-i18n="path_02_title">КІНЬ</h3></div></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-start  group mb-12">
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-3 bg-brandOrange/40 h-[calc(100%+3rem)] w-0.5 z-0"></div>
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-brandDark border-2 border-brandOrange flex items-center justify-center z-10 group-hover:scale-125 transition-transform duration-300"><div class="w-2 h-2 rounded-full bg-brandOrange"></div></div>
+<div class="ml-12 md:ml-0 md:w-1/2 md:pr-12 w-full">
+<div class="bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl relative z-10">
+<div class="flex items-center justify-between mb-4"><span class="text-brandOrange font-black text-2xl tracking-wider md:hidden">03</span><span class="text-[10px] font-bold tracking-widest text-brandOrange uppercase bg-brandOrange/10 border border-brandOrange/30 px-2 py-0.5 rounded">ТРЕНУВАННЯ</span></div>
+<h3 class="text-white font-bold tracking-wider text-xl mb-3 uppercase md:hidden" data-i18n="path_03_title">ПЕРШІ КРОКИ</h3>
+<p class="text-textGray leading-relaxed text-sm lg:text-base font-normal" data-i18n="path_03_desc">Після кількох занять Сергій вирушив на ротацію, і до навчального процесу як головний інструктор долучився Ілля.</p>
+</div></div>
+<div class="hidden md:flex md:w-1/2 md:pl-12 justify-start text-left items-center self-center"><div class="space-y-1"><span class="text-brandOrange/80 font-black text-4xl lg:text-5xl tracking-tight block">03</span><h3 class="text-white font-black tracking-wider text-xl lg:text-2xl uppercase leading-snug" data-i18n="path_03_title">ПЕРШІ КРОКИ</h3></div></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-start md:flex-row-reverse group mb-12">
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-3 bg-brandOrange/40 h-[calc(100%+3rem)] w-0.5 z-0"></div>
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-brandDark border-2 border-brandOrange flex items-center justify-center z-10 group-hover:scale-125 transition-transform duration-300"><div class="w-2 h-2 rounded-full bg-brandOrange"></div></div>
+<div class="ml-12 md:ml-0 md:w-1/2 md:pl-12 w-full">
+<div class="bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl relative z-10">
+<div class="flex items-center justify-between mb-4"><span class="text-brandOrange font-black text-2xl tracking-wider md:hidden">04</span><span class="text-[10px] font-bold tracking-widest text-brandOrange uppercase bg-brandOrange/10 border border-brandOrange/30 px-2 py-0.5 rounded">ДОСЯГНЕННЯ</span></div>
+<h3 class="text-white font-bold tracking-wider text-xl mb-3 uppercase md:hidden" data-i18n="path_04_title">МОТОДЖИМХАНА</h3>
+<p class="text-textGray leading-relaxed text-sm lg:text-base font-normal" data-i18n="path_04_desc">Пройшовши курс підготовки, Євген наважився взяти участь у професійних змаганнях з Мотоджимхани та проїхав дистанцію без жодної помилки чи падіння!</p>
+</div></div>
+<div class="hidden md:flex md:w-1/2 md:pr-12 justify-end text-right items-center self-center"><div class="space-y-1"><span class="text-brandOrange/80 font-black text-4xl lg:text-5xl tracking-tight block">04</span><h3 class="text-white font-black tracking-wider text-xl lg:text-2xl uppercase leading-snug" data-i18n="path_04_title">МОТОДЖИМХАНА</h3></div></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-start  group mb-12">
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-3 bg-brandOrange/40 h-[calc(100%+3rem)] w-0.5 z-0"></div>
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-brandDark border-2 border-brandOrange flex items-center justify-center z-10 group-hover:scale-125 transition-transform duration-300"><div class="w-2 h-2 rounded-full bg-brandOrange"></div></div>
+<div class="ml-12 md:ml-0 md:w-1/2 md:pr-12 w-full">
+<div class="bg-[#0f0f0f] p-6 lg:p-8 border border-neutral-800 hover:border-brandOrange/50 transition-colors duration-300 rounded-sm shadow-xl relative z-10">
+<div class="flex items-center justify-between mb-4"><span class="text-brandOrange font-black text-2xl tracking-wider md:hidden">05</span><span class="text-[10px] font-bold tracking-widest text-brandOrange uppercase bg-brandOrange/10 border border-brandOrange/30 px-2 py-0.5 rounded">СЬОГОДНІ</span></div>
+<h3 class="text-white font-bold tracking-wider text-xl mb-3 uppercase md:hidden" data-i18n="path_05_title">ЩО ЗАРАЗ?</h3>
+<p class="text-textGray leading-relaxed text-sm lg:text-base font-normal" data-i18n="path_05_desc">Ми готові навчати нових учасників із травмами лівої руки. Крім того, спільнота задонатила нам ще один мотоцикл, який ми зараз адаптуємо. Навіть якщо у вас інша травма — заповнюйте анкету, адже саме ваші запити визначають, як ми адаптуватимемо наступні байки!</p>
+</div></div>
+<div class="hidden md:flex md:w-1/2 md:pl-12 justify-start text-left items-center self-center"><div class="space-y-1"><span class="text-brandOrange/80 font-black text-4xl lg:text-5xl tracking-tight block">05</span><h3 class="text-white font-black tracking-wider text-xl lg:text-2xl uppercase leading-snug" data-i18n="path_05_title">ЩО ЗАРАЗ?</h3></div></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-start md:flex-row-reverse group mb-12">
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-3 border-l-2 border-dashed border-brandOrange/80 h-28 z-0"></div>
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-brandDark border-2 border-brandOrange flex items-center justify-center z-10 group-hover:scale-125 transition-transform duration-300"><div class="w-2 h-2 rounded-full bg-brandOrange"></div></div>
+<div class="ml-12 md:ml-0 md:w-1/2 md:pl-12 w-full">
+<div class="bg-[#0f0f0f] p-6 lg:p-8 border-2 border-brandOrange/80 hover:border-brandOrange transition-colors duration-300 rounded-sm shadow-xl relative z-10">
+<div class="flex items-center justify-between mb-4"><span class="text-brandOrange font-black text-2xl tracking-wider md:hidden">06</span><span class="text-[10px] font-bold tracking-widest text-brandOrange uppercase bg-brandOrange/10 border border-brandOrange/30 px-2 py-0.5 rounded">ЗАВТРА</span></div>
+<h3 class="text-white font-bold tracking-wider text-xl mb-3 uppercase md:hidden" data-i18n="path_06_title">ЩО ДАЛІ?</h3>
+<p class="text-textGray leading-relaxed text-sm lg:text-base font-normal" data-i18n="path_06_desc">Спираючись на власні результати, ми ведемо перемовини з державними органами щодо легалізації процедури отримання водійського посвідчення категорії «A» для людей з ампутаціями. Також розширюємо парк адаптованих мотоциклів, щоб прийняти більше охочих!</p>
+</div></div>
+<div class="hidden md:flex md:w-1/2 md:pr-12 justify-end text-right items-center self-center"><div class="space-y-1"><span class="text-brandOrange/80 font-black text-4xl lg:text-5xl tracking-tight block">06</span><h3 class="text-white font-black tracking-wider text-xl lg:text-2xl uppercase leading-snug" data-i18n="path_06_title">ЩО ДАЛІ?</h3></div></div>
+</div>
+</div>
         </div>
     </section>
 
@@ -302,11 +391,11 @@
             class="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-800 pb-6 mb-12 gap-6">
             <div>
                 <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight">
-                    <span class="text-white" data-i18n="gallery_part1"></span> <span class="text-brandOrange"
-                        data-i18n="gallery_part2"></span>
+                    <span class="text-white" data-i18n="gallery_part1">НАШІ</span> <span class="text-brandOrange"
+                        data-i18n="gallery_part2">МОМЕНТИ</span>
                 </h2>
                 <p class="text-textGray font-medium tracking-widest uppercase text-sm mt-2"
-                    data-i18n="gallery_subtitle"></p>
+                    data-i18n="gallery_subtitle">РЕАЛЬНІ ІСТОРІЇ. РЕАЛЬНІ ЛЮДИ.</p>
             </div>
 
             <div class="flex items-center gap-4">
@@ -346,7 +435,7 @@
     <section id="team" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800">
         <div
             class="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-800 pb-6 mb-12 gap-6">
-            <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight" data-i18n="team_title"></h2>
+            <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight" data-i18n="team_title">КОМАНДА</h2>
 
             <div class="flex items-center gap-4">
                 <button id="team-prev"
@@ -375,13 +464,13 @@
                         </button>
                         <span
                             class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full"
-                            data-i18n="team_1_role"></span>
+                            data-i18n="team_1_role">FOUNDER</span>
                     </div>
 
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors"
-                            data-i18n="team_1_title"></h3>
-                        <p class="text-gray-300 leading-relaxed text-sm font-medium mb-4" data-i18n="team_1_desc"></p>
+                            data-i18n="team_1_title">Сергій Катрич</h3>
+                        <p class="text-gray-300 leading-relaxed text-sm font-medium mb-4" data-i18n="team_1_desc">Засновник. Реагувальник та інструктор у ГО 'Мотодопомога Львів', госпітальєр та розробник ігор.</p>
 
                         <a href="https://instagram.com/gaspod3" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-textGray hover:text-brandOrange transition-colors uppercase pt-2 border-t border-neutral-800/60 w-full">
@@ -389,7 +478,7 @@
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
-                            <span data-i18n="team_1_insta"></span>
+                            <span data-i18n="team_1_insta">@gaspod3 ↗</span>
                         </a>
                     </div>
                 </div>
@@ -411,13 +500,13 @@
                         </button>
                         <span
                             class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full"
-                            data-i18n="team_2_role"></span>
+                            data-i18n="team_2_role">MEDIA</span>
                     </div>
 
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors"
-                            data-i18n="team_2_title"></h3>
-                        <p class="text-gray-300 leading-relaxed text-sm font-medium mb-4" data-i18n="team_2_desc"></p>
+                            data-i18n="team_2_title">Анастасія Хлібник</h3>
+                        <p class="text-gray-300 leading-relaxed text-sm font-medium mb-4" data-i18n="team_2_desc">Надзвичайна фотографка та журналістка. Відповідає за фіксацію емоцій, контент, візуал, соцмережі та комунікації :)</p>
 
                         <a href="https://instagram.com/khlibnyk_nastya" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-textGray hover:text-brandOrange transition-colors uppercase pt-2 border-t border-neutral-800/60 w-full">
@@ -425,7 +514,7 @@
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
-                            <span data-i18n="team_2_insta"></span>
+                            <span data-i18n="team_2_insta">@khlibnyk_nastya ↗</span>
                         </a>
                     </div>
                 </div>
@@ -447,13 +536,13 @@
                         </button>
                         <span
                             class="text-brandOrange text-xs font-bold tracking-widest uppercase bg-brandOrange/10 border border-brandOrange/30 px-3 py-1 rounded-full"
-                            data-i18n="team_3_role"></span>
+                            data-i18n="team_3_role">WISDOM MASTER</span>
                     </div>
 
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold text-white mb-3 uppercase tracking-wide group-hover:text-brandOrange transition-colors"
-                            data-i18n="team_3_title"></h3>
-                        <p class="text-gray-300 leading-relaxed text-sm font-medium mb-4" data-i18n="team_3_desc"></p>
+                            data-i18n="team_3_title">Ілля Терещенко</h3>
+                        <p class="text-gray-300 leading-relaxed text-sm font-medium mb-4" data-i18n="team_3_desc">Професійний інструктор із партнерської мотошколи. Навчить правильно закладати у віраж та пояснить, чому важливо прогрівати гуму.</p>
 
                         <a href="https://instagram.com/illiativ" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-textGray hover:text-brandOrange transition-colors uppercase pt-2 border-t border-neutral-800/60 w-full">
@@ -461,7 +550,7 @@
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
-                            <span data-i18n="team_3_insta"></span>
+                            <span data-i18n="team_3_insta">@illiativ ↗</span>
                         </a>
                     </div>
                 </div>
@@ -473,8 +562,8 @@
     <section id="faq" class="max-w-[1600px] mx-auto p-8 lg:p-16 xl:p-24 border-b border-neutral-800 bg-[#151515]">
         <h2
             class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight border-b border-neutral-800 pb-6 mb-12 flex flex-wrap gap-x-3">
-            <span class="text-white" data-i18n="faq_title_part1"></span>
-            <span class="text-brandOrange" data-i18n="faq_title_part2"></span>
+            <span class="text-white" data-i18n="faq_title_part1">ЧАСТІ</span>
+            <span class="text-brandOrange" data-i18n="faq_title_part2">ЗАПИТАННЯ</span>
         </h2>
 
         <div class="max-w-4xl mx-auto space-y-4">
@@ -485,18 +574,18 @@
                     class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none group cursor-pointer">
                     <span
                         class="font-bold text-lg sm:text-xl text-white uppercase tracking-wide group-hover:text-brandOrange transition-colors"
-                        data-i18n="faq_q1"></span>
+                        data-i18n="faq_q1">Це безкоштовно для ветеранів?</span>
                     <div class="flex items-center gap-2 flex-shrink-0">
                         <span
                             class="faq-btn-text text-xs font-bold uppercase tracking-widest text-textGray hidden sm:inline transition-colors"
-                            data-i18n="faq_expand"></span>
+                            data-i18n="faq_expand">Розгорнути</span>
                         <span
                             class="faq-arrow text-xl text-textGray transition-transform duration-300 transform">∨</span>
                     </div>
                 </button>
                 <div
                     class="faq-answer px-6 pb-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal border-t border-neutral-800/50 pt-4">
-                    <p data-i18n="faq_a1"></p>
+                    <p data-i18n="faq_a1">Оскільки проєкт реалізується за власний кошторис та підтримку небайдужих, ми надаємо базовий курс із <strong>5 повністю безкоштовних занять</strong>. Усі витрати на використання адаптованих мотоциклів, паливо та захист ми беремо на себе.</p>
                 </div>
             </div>
 
@@ -507,18 +596,18 @@
                     class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none group cursor-pointer">
                     <span
                         class="font-bold text-lg sm:text-xl text-white uppercase tracking-wide group-hover:text-brandOrange transition-colors"
-                        data-i18n="faq_q2"></span>
+                        data-i18n="faq_q2">Чи потрібні категорія «А» або досвід кермування?</span>
                     <div class="flex items-center gap-2 flex-shrink-0">
                         <span
                             class="faq-btn-text text-xs font-bold uppercase tracking-widest text-textGray hidden sm:inline transition-colors"
-                            data-i18n="faq_expand"></span>
+                            data-i18n="faq_expand">Розгорнути</span>
                         <span
                             class="faq-arrow text-xl text-textGray transition-transform duration-300 transform">∨</span>
                     </div>
                 </button>
                 <div
                     class="faq-answer px-6 pb-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal border-t border-neutral-800/50 pt-4">
-                    <p data-i18n="faq_a2"></p>
+                    <p data-i18n="faq_a2">Ні! Вам <strong>не потрібно мати відкриту категорію «А»</strong> чи будь-який попередній досвід. Усі заняття проходять на закритому майданчику/треку, а наші інструктори навчають з самого нуля у безпечному темпі.</p>
                 </div>
             </div>
 
@@ -529,18 +618,18 @@
                     class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none group cursor-pointer">
                     <span
                         class="font-bold text-lg sm:text-xl text-white uppercase tracking-wide group-hover:text-brandOrange transition-colors"
-                        data-i18n="faq_q3"></span>
+                        data-i18n="faq_q3">Чи забезпечуєте ви екіпіруванням?</span>
                     <div class="flex items-center gap-2 flex-shrink-0">
                         <span
                             class="faq-btn-text text-xs font-bold uppercase tracking-widest text-textGray hidden sm:inline transition-colors"
-                            data-i18n="faq_expand"></span>
+                            data-i18n="faq_expand">Розгорнути</span>
                         <span
                             class="faq-arrow text-xl text-textGray transition-transform duration-300 transform">∨</span>
                     </div>
                 </button>
                 <div
                     class="faq-answer px-6 pb-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal border-t border-neutral-800/50 pt-4">
-                    <p data-i18n="faq_a3"></p>
+                    <p data-i18n="faq_a3">Так, ми надаємо необхідний комплект захисту: <strong>шолом, мотокуртку та наколінники</strong>. Безпека учасників на треку — наш головний пріоритет.</p>
                 </div>
             </div>
 
@@ -551,18 +640,18 @@
                     class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none group cursor-pointer">
                     <span
                         class="font-bold text-lg sm:text-xl text-white uppercase tracking-wide group-hover:text-brandOrange transition-colors"
-                        data-i18n="faq_q4"></span>
+                        data-i18n="faq_q4">Які типи поранень/ампутацій ви зараз можете прийняти?</span>
                     <div class="flex items-center gap-2 flex-shrink-0">
                         <span
                             class="faq-btn-text text-xs font-bold uppercase tracking-widest text-textGray hidden sm:inline transition-colors"
-                            data-i18n="faq_expand"></span>
+                            data-i18n="faq_expand">Розгорнути</span>
                         <span
                             class="faq-arrow text-xl text-textGray transition-transform duration-300 transform">∨</span>
                     </div>
                 </button>
                 <div
                     class="faq-answer px-6 pb-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal border-t border-neutral-800/50 pt-4">
-                    <p data-i18n="faq_a4"></p>
+                    <p data-i18n="faq_a4">Наразі ми повністю готові приймати учасників із травмами та ампутаціями лівої руки. <strong>Якщо у вас інша травма — обов'язково залишайте заявку!</strong> Саме ваш запит може визначити інженерні рішення та тип адаптації для нашого наступного мотоцикла.</p>
                 </div>
             </div>
         </div>
@@ -574,9 +663,9 @@
             class="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-800 pb-6 mb-12 gap-6">
             <div>
                 <h2 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight"
-                    data-i18n="partners_title"></h2>
+                    data-i18n="partners_title">ПАРТНЕРИ</h2>
                 <p class="text-textGray font-medium tracking-widest text-sm uppercase mt-2"
-                    data-i18n="partners_subtitle"></p>
+                    data-i18n="partners_subtitle">РАЗОМ РОБИМО БІЛЬШЕ</p>
             </div>
 
             <div class="flex items-center gap-4">
@@ -603,7 +692,7 @@
                         class="text-xl font-bold text-white group-hover:text-brandOrange transition-colors uppercase tracking-wider mb-2">
                         LEMBERG MOTO</h3>
                     <span class="text-xs text-textGray tracking-widest uppercase font-semibold"
-                        data-i18n="partner_1_desc"></span>
+                        data-i18n="partner_1_desc">МОТОШКОЛА</span>
                 </a>
 
                 <!-- Zgraya -->
@@ -619,7 +708,7 @@
                         class="text-xl font-bold text-white group-hover:text-brandOrange transition-colors uppercase tracking-wider mb-2">
                         ZGRAYA</h3>
                     <span class="text-xs text-textGray tracking-widest uppercase font-semibold"
-                        data-i18n="partner_2_desc"></span>
+                        data-i18n="partner_2_desc">ІНФОРМАЦІЙНА ПІДТРИМКА</span>
                 </a>
             </div>
         </div>
@@ -637,8 +726,8 @@
             <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-16">
                 <div>
                     <h2 class="text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tight uppercase mb-8">
-                        <span class="text-white" data-i18n="footer_brand1"></span> <span class="text-brandOrange"
-                            data-i18n="footer_brand2"></span>
+                        <span class="text-white" data-i18n="footer_brand1">ПЕРША</span> <span class="text-brandOrange"
+                            data-i18n="footer_brand2">ВНИЗ</span>
                     </h2>
 
                     <div
@@ -650,7 +739,7 @@
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
-                            <span class="font-bold tracking-widest text-lg" data-i18n="footer_insta"></span>
+                            <span class="font-bold tracking-widest text-lg" data-i18n="footer_insta">ПІДПИСАТИСЯ</span>
                         </a>
 
                         <span class="hidden sm:inline text-neutral-700 font-light text-2xl select-none">|</span>
@@ -663,32 +752,31 @@
                                 class="h-14 sm:h-16 w-auto object-contain motodopomoga-logo">
                             <span
                                 class="text-xs font-bold tracking-widest text-gray-400 group-hover:text-brandOrange transition-colors uppercase mt-3"
-                                data-i18n="footer_motodopomoga_link"></span>
+                                data-i18n="footer_motodopomoga_link">ГО "МОТОДОПОМОГА ЛЬВІВ" ↗</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="text-left lg:text-right w-full lg:w-auto">
-                    <p class="text-gray-400 font-bold tracking-widest text-sm mb-4 uppercase" data-i18n="footer_ready">
-                    </p>
+                    <p class="text-gray-400 font-bold tracking-widest text-sm mb-4 uppercase" data-i18n="footer_ready">ГОТОВИЙ СПРОБУВАТИ ТЕ, ПРО ЩО ТАК ДАВНО МРІЯВ?</p>
                     <a href="https://forms.gle/SpJBqmKMYH8tFTDP6" target="_blank" rel="noopener noreferrer"
                         class="inline-block bg-brandOrange hover:bg-[#bd4517] text-white font-bold py-6 px-12 uppercase tracking-wider text-xl w-full lg:w-auto text-center transition-colors rounded-sm shadow-lg"
-                        data-i18n="footer_btn"></a>
+                        data-i18n="footer_btn">ЗАПОВНИТИ АНКЕТУ</a>
                 </div>
             </div>
 
             <div
                 class="flex flex-col md:flex-row justify-between pt-8 border-t border-neutral-800 text-sm font-medium tracking-widest text-neutral-500 uppercase gap-4">
-                <span data-i18n="footer_copy"></span>
+                <span data-i18n="footer_copy">© 2026 ПРОЄКТ 'ПЕРША ВНИЗ' ТА ГО 'МОТОДОПОМОГА ЛЬВІВ'.</span>
                 <a href="mailto:main@firstdown.org.ua" class="hover:text-brandOrange transition-colors"
-                    data-i18n="footer_partners"></a>
+                    data-i18n="footer_partners">ДЛЯ КОНТАКТІВ ТА ЗМІ: MAIN@FIRSTDOWN.ORG.UA</a>
             </div>
         </div>
     </section>
 
     <!-- Скрипти -->
     <script>
-        let currentLang = localStorage.getItem('firstDownLang') || 'ua';
+        let currentLang = 'ua'; // мова визначається адресою сторінки (build.py)
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
