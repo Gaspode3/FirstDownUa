@@ -238,11 +238,11 @@
 
     <!-- HERO БЛОК З ФІКСОВАНИМ ШЛЯХОМ ДО БЕКГРАУНДУ -->
     <section
-        class="relative max-w-[1600px] mx-auto min-h-[80vh] flex items-center justify-center border-b border-neutral-800 p-8 lg:p-16 xl:p-24 overflow-hidden bg-[#0f0f0f]">
+        class="relative max-w-[1600px] mx-auto min-h-[calc(100vh-5rem)] flex items-center justify-center border-b border-neutral-800 p-8 lg:p-16 xl:p-24 overflow-hidden bg-[#0f0f0f]">
 
-        <!-- Фонове зображення з прив'язкою до нижнього краю (bg-bottom), щоб показати мотоцикл -->
-        <div class="absolute inset-0 z-0 bg-cover bg-bottom bg-no-repeat grayscale opacity-50 transition-opacity duration-300"
-            style="background-image: url('gallery/hero-bg.jpg');"></div>
+        <!-- Фонове зображення: позиція 30% зверху, щоб у кадрі були і голова райдера, і мотоцикл -->
+        <div class="absolute inset-0 z-0 bg-cover bg-no-repeat grayscale opacity-50 transition-opacity duration-300"
+            style="background-image: url('gallery/hero-bg.jpg'); background-position: center 30%;"></div>
 
         <!-- Полегшена градієнтна підкладка: затемнює тільки верх/краї для читабельності тексту, залишаючи байк видимим -->
         <div class="absolute inset-0 z-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/50 to-[#0f0f0f]/80"></div>
@@ -254,7 +254,7 @@
 
             <h1
                 class="text-6xl sm:text-7xl lg:text-9xl font-black uppercase tracking-tight leading-none drop-shadow-2xl">
-                <span class="text-white" data-i18n="hero_title_1">ПЕРША</span> <span class="text-brandOrange"
+                <span class="block text-white" data-i18n="hero_title_1">ПЕРША</span> <span class="block text-brandOrange"
                     data-i18n="hero_title_2">ВНИЗ</span>
             </h1>
 
